@@ -1,18 +1,21 @@
 package com.example.demo.models.view;
 
-import javax.persistence.Column;
-import javax.validation.constraints.NotNull;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ShelterView {
 
+    private Long id;
     private String description;
     private String name;
     private String image;
     private String username;
-    private List<AnimalView> animals;
+    private LinkedList<AnimalView> animals;
 
-    public ShelterView(String description, String name, String image, String username) {
+    public ShelterView(Long id, String description, String name, String image, String username) {
+        this.id = id;
         this.description = description;
         this.name = name;
         this.image = image;
@@ -22,12 +25,25 @@ public class ShelterView {
     public ShelterView() {
     }
 
+    public ShelterView(Long id) {
+        this.id = id;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public ShelterView setDescription(String description) {
         this.description = description;
+        return this;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public ShelterView setId(Long id) {
+        this.id = id;
         return this;
     }
 
@@ -62,7 +78,7 @@ public class ShelterView {
         return animals;
     }
 
-    public ShelterView setAnimals(List<AnimalView> animals) {
+    public ShelterView setAnimals(LinkedList<AnimalView> animals) {
         this.animals = animals;
         return this;
     }

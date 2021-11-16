@@ -10,12 +10,13 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Animal extends BasicEntity{
 
-    @Column(nullable = false,unique = true)
+
     private String name;
     private String description;
-    private String imageUrl;
-    @JoinColumn(nullable = false)
-    @ManyToOne
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private String image;
+    @JoinColumn()
+    @ManyToOne()
     private Shelter shelter;
 
     private AnimalTypes animalType;
@@ -23,12 +24,12 @@ public class Animal extends BasicEntity{
     public Animal() {
     }
 
-    public Animal(String name, String description, Shelter shelter,AnimalTypes animalType,String imageUrl) {
+    public Animal(String name, String description, Shelter shelter,AnimalTypes animalType,String image) {
         this.name = name;
         this.description = description;
         this.shelter = shelter;
         this.animalType=animalType;
-        this.imageUrl=imageUrl;
+        this.image = image;
     }
 
     public String getName() {
@@ -64,6 +65,15 @@ public class Animal extends BasicEntity{
 
     public Animal setAnimalType(AnimalTypes animalType) {
         this.animalType = animalType;
+        return this;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public Animal setImage(String image) {
+        this.image = image;
         return this;
     }
 }

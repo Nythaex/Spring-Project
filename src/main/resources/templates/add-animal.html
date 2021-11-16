@@ -24,7 +24,7 @@
                                     <h4 class="mt-1 mb-5 pb-1 text-danger">Find the missing piece of your family</h4>
                                 </div>
 
-                                <form method="POST" th:action="@{/user/add-shelter}" enctype="multipart/form-data" th:object="${addShelterBinding}">
+                                <form method="POST" th:action="@{/user/shelter/add-animal}" enctype="multipart/form-data" th:object="${addAnimalBinding}">
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label text-danger" for="form2Example11">Name</label>
@@ -44,6 +44,19 @@
                                     </div>
 
                                     <div class="form-outline mb-4">
+                                        <label class="form-label text-danger" >Animal Type</label>
+                                        <select  class="form-control" th:errorclass="is-invalid" name="animalType">
+                                            <option value="">- Select animal type -</option>
+                                            <option th:each="t:${T(com.example.demo.models.enums.AnimalTypes).values()}" th:text="${t}" th:value="${t}" th:selected="${t}==*{animalType}"> Town
+                                            </option>
+                                        </select>
+                                        <p class="invalid-feedback errors alert alert-danger">
+                                            Select type
+                                        </p>
+
+                                    </div>
+
+                                    <div class="form-outline mb-4">
                                         <label class="form-label text-danger" for="form2Example22">Description</label>
                                         <textarea th:field="*{description}" th:errorclass="is-invalid"
                                                   id="form2Example22" class="form-control text-danger"></textarea>
@@ -54,7 +67,7 @@
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <input type="submit"
                                                class="btn btn-danger fs-1 btn-block fa-lg gradient-custom-2 pb-2 pt-2 mt-5"
-                                               value="Register my shelter">
+                                               value="Add animal">
                                     </div>
 
 

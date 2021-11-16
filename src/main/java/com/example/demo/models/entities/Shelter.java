@@ -11,20 +11,20 @@ public class Shelter extends BasicEntity{
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    @NotNull
+
     private String name;
 
     @Column(columnDefinition = "MEDIUMBLOB")
     private String image;
 
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter")
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter",cascade = CascadeType.PERSIST)
     private Set<Animal> animals;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter")
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter",cascade = CascadeType.PERSIST)
     private Set<Worker> workers;
 
-    @OneToOne(fetch = FetchType.EAGER,mappedBy = "shelter")
+    @OneToOne(fetch = FetchType.EAGER,mappedBy = "shelter",cascade = CascadeType.PERSIST)
     private User user;
 
     public Shelter() {

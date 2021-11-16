@@ -1,8 +1,11 @@
-package com.example.demo.models.view;
+package com.example.demo.models.services;
 
-public class AnimalView {
+import com.example.demo.models.enums.AnimalTypes;
+import org.springframework.web.multipart.MultipartFile;
 
-    private Long id;
+import javax.validation.constraints.NotNull;
+
+public class AddAnimalService {
     private String name;
 
 
@@ -11,37 +14,25 @@ public class AnimalView {
 
     private String image;
 
-    private String animalType;
 
-    public AnimalView(Long id) {
-        this.id = id;
-    }
 
-    public AnimalView() {
-    }
+    private AnimalTypes animalType;
 
-    public AnimalView(Long id, String name, String description, String image, String animalType) {
-        this.id = id;
+    public AddAnimalService(String name, String description, String image, AnimalTypes animalType) {
         this.name = name;
         this.description = description;
         this.image = image;
         this.animalType = animalType;
     }
 
-    public Long getId() {
-        return id;
-    }
-
-    public AnimalView setId(Long id) {
-        this.id = id;
-        return this;
+    public AddAnimalService() {
     }
 
     public String getName() {
         return name;
     }
 
-    public AnimalView setName(String name) {
+    public AddAnimalService setName(String name) {
         this.name = name;
         return this;
     }
@@ -50,7 +41,7 @@ public class AnimalView {
         return description;
     }
 
-    public AnimalView setDescription(String description) {
+    public AddAnimalService setDescription(String description) {
         this.description = description;
         return this;
     }
@@ -59,16 +50,16 @@ public class AnimalView {
         return image;
     }
 
-    public AnimalView setImage(String image) {
+    public AddAnimalService setImage(String image) {
         this.image = image;
         return this;
     }
 
-    public String getAnimalType() {
+    public AnimalTypes getAnimalType() {
         return animalType;
     }
 
-    public AnimalView setAnimalType(String animalType) {
+    public AddAnimalService setAnimalType(AnimalTypes animalType) {
         this.animalType = animalType;
         return this;
     }
