@@ -3,8 +3,9 @@ package com.example.demo.services.impl;
 import com.example.demo.models.entities.Shelter;
 import com.example.demo.models.entities.User;
 import com.example.demo.models.enums.UserType;
+import com.example.demo.models.services.AddShelterService;
 import com.example.demo.models.services.RegisterService;
-import com.example.demo.models.view.ViewMessages;
+import com.example.demo.models.view.MessagesView;
 import com.example.demo.models.view.UserView;
 import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.TownService;
@@ -16,7 +17,6 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -90,12 +90,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public List<ViewMessages> getMessagesFrom(Long id) {
-       return   userRepository.getById(id).getMine().stream().map(m->modelMapper.map(m, ViewMessages.class).setFrom(m.getFrom().getUsername()).setTo(m.getTo().getUsername())).collect(Collectors.toList());
+    public List<MessagesView> getMessagesFrom(Long id) {
+       return   userRepository.getById(id).getMine().stream().map(m->modelMapper.map(m, MessagesView.class).setFrom(m.getFrom().getUsername()).setTo(m.getTo().getUsername())).collect(Collectors.toList());
     }
     @Override
-    public List<ViewMessages> getMessagesTo(Long id) {
-        return   userRepository.getById(id).getTheirs().stream().map(m->modelMapper.map(m, ViewMessages.class).setFrom(m.getFrom().getUsername()).setTo(m.getTo().getUsername())).collect(Collectors.toList());
+    public List<MessagesView> getMessagesTo(Long id) {
+        return   userRepository.getById(id).getTheirs().stream().map(m->modelMapper.map(m, MessagesView.class).setFrom(m.getFrom().getUsername()).setTo(m.getTo().getUsername())).collect(Collectors.toList());
     }
 
     @Override
@@ -116,4 +116,20 @@ public class UserServiceImpl implements UserService {
     public void unbanUser(Long id) {
         userRepository.save(userRepository.getById(id).setBanned(false));
     }
+
+    @Override
+    public void saveShelterByUserId(Long id, AddShelterService shelter) {
+        User user = userRepository.findById(id).orElse(null);
+        Shelter map = modelMapper.map(shelter, Shelter.class);
+        user.getShelter().setImage(map.getImage()).setName(map.getName()).setDescription(map.getDescription());
+        userRepository.save(user);
+
+    }
+
+    @Override
+    public void save(User byId) {
+        userRepository.save(byId);
+    }
+
+
 }

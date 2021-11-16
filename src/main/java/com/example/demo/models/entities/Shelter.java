@@ -1,7 +1,7 @@
 package com.example.demo.models.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -11,9 +11,11 @@ public class Shelter extends BasicEntity{
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @NotNull
     private String name;
 
-    private String imageUrl;
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private String image;
 
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter")
@@ -35,7 +37,7 @@ public class Shelter extends BasicEntity{
         this.animals=new HashSet<>();
         this.description = description;
         this.name = name;
-       this.imageUrl=imageUrl;
+       this.image =imageUrl;
     }
 
     public String getName() {
@@ -83,12 +85,12 @@ public class Shelter extends BasicEntity{
         return this;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage() {
+        return image;
     }
 
-    public Shelter setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public Shelter setImage(String image) {
+        this.image = image;
         return this;
     }
 }

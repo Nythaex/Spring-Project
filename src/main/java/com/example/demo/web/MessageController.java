@@ -2,7 +2,7 @@ package com.example.demo.web;
 
 import com.example.demo.models.bindings.SendMessageBinding;
 import com.example.demo.models.services.SentMessageService;
-import com.example.demo.models.view.ViewMessages;
+import com.example.demo.models.view.MessagesView;
 import com.example.demo.services.MessageService;
 import com.example.demo.services.UserService;
 import com.example.demo.services.impl.CurrentUser;
@@ -44,7 +44,7 @@ public class MessageController {
 
 
 
-        List<ViewMessages> messages;
+        List<MessagesView> messages;
         if (request.isUserInRole("ROLE_ADMIN")) {
             messages = userService.getMessagesFrom(id);
         } else if (principal.getName().equals(userService.getById(id).getUsername())) {
@@ -66,12 +66,16 @@ public class MessageController {
     }
 
     @ModelAttribute
-    public SendMessageBinding sentMessageBinding() {
+    public SendMessageBinding sendMessageBinding() {
         return new SendMessageBinding();
     }
 
     @GetMapping("/user/messages/sent")
-    public String getSentMessage() {
+    public String getSentMessage(Model model) {
+           if (!model.containsAttribute("contains")){
+               model.addAttribute("contains",true);
+           }
+
         return "sent-message";
     }
 
@@ -79,11 +83,21 @@ public class MessageController {
     public String postSentMessage(@Valid SendMessageBinding sendMessageBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, HttpServletRequest httpServletRequest) {
 
 
+
         if (bindingResult.hasErrors()||userService.getByName(sendMessageBinding.getUsername())==null) {
+
             redirectAttributes.addFlashAttribute("sendMessageBinding", sendMessageBinding);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.sendMessageBinding", bindingResult);
+
+
+                redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.sendMessageBinding", bindingResult);
+
+            if (userService.getByName(sendMessageBinding.getUsername())==null){
+                redirectAttributes.addFlashAttribute("contains",false);
+            }
             return "redirect:/user/messages/sent";
         }
+
+
 
         messageService.sentMessage(httpServletRequest.getUserPrincipal().getName(), modelMapper.map(sendMessageBinding, SentMessageService.class));
 

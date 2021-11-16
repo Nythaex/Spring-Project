@@ -7,7 +7,28 @@
 <body>
 <header th:insert="fragment/fragments::nav">
 </header>
-       
+
+<section sec:authorize="hasAnyRole('SHELTER')" style="background:linear-gradient(90deg, rgba(177,180,58,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); " class="min-vh-100 pt-2 container-fluid"  >
+    <article th:object="${shelter}" class="card container border-danger border-2 mt-2 ">
+        <div class="card-body text-center" >
+
+            <p class="text-danger fs-4 card-header bg-white  border-danger border-5">Username: <span class="card-title text-danger" th:text="*{username}">Username </span></p>
+            <p></p>
+              <img th:src="@{'data:image/jpeg;base64,'+*{image}}" class="img-fluid">
+            <p class="text-danger fs-4 card-header bg-white  text-dark border-2">Shelter name: <span class="card-title text-dark" th:text="*{name}">Title</span></p>
+            <p></p>
+        </div>
+        <span class="card-subtitle mb-2 text-dark fs-5 text-secondary" th:text="*{description}">Description</span>
+    </article>
+
+    <article th:each="a:${animals}" th:object="*{a}" class="card container border-danger border-2 mt-2 ">
+
+
+
+    </article>
+
+</section>
+
 
 
 <footer th:replace="fragment/fragments::footer">

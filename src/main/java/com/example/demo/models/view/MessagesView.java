@@ -1,6 +1,6 @@
 package com.example.demo.models.view;
 
-public class ViewMessages {
+public class MessagesView {
 
     private Long id;
     private String title;
@@ -8,7 +8,7 @@ public class ViewMessages {
     private String from;
     private String to;
 
-    public ViewMessages(String title, String description, String from, String to, Long id) {
+    public MessagesView(String title, String description, String from, String to, Long id) {
         this.title = title;
         this.description = description;
         this.from = from;
@@ -16,14 +16,14 @@ public class ViewMessages {
         this.id=id;
     }
 
-    public ViewMessages() {
+    public MessagesView() {
     }
 
     public String getTitle() {
         return title;
     }
 
-    public ViewMessages setTitle(String title) {
+    public MessagesView setTitle(String title) {
         this.title = title;
         return this;
     }
@@ -32,7 +32,7 @@ public class ViewMessages {
         return description;
     }
 
-    public ViewMessages setDescription(String description) {
+    public MessagesView setDescription(String description) {
         this.description = description;
         return this;
     }
@@ -41,7 +41,7 @@ public class ViewMessages {
         return from;
     }
 
-    public ViewMessages setFrom(String from) {
+    public MessagesView setFrom(String from) {
         this.from = from;
         return this;
     }
@@ -50,7 +50,7 @@ public class ViewMessages {
         return to;
     }
 
-    public ViewMessages setTo(String to) {
+    public MessagesView setTo(String to) {
         this.to = to;
         return this;
     }
@@ -59,7 +59,7 @@ public class ViewMessages {
         return id;
     }
 
-    public ViewMessages setId(Long id) {
+    public MessagesView setId(Long id) {
         this.id = id;
         return this;
     }

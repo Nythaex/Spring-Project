@@ -47,6 +47,7 @@ public class RegisterAndLoginController {
         }
         model.addAttribute("towns", townService.getAll());
 
+
         return "register";
     }
 

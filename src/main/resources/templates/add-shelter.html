@@ -8,62 +8,55 @@
 <header th:insert="fragment/fragments::nav">
 </header>
 
-
-<section class="h-100 gradient-form w-100 min-vh-100"
+<section class="h-100 gradient-form w-100"
          style="background:linear-gradient(90deg, rgba(177,180,58,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);height: 200px">
-
     <div class="container py-5 h-100 ">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-10">
                 <div class="card rounded-3 text-black">
                     <div class="row g-0">
                         <div class="col-lg-12">
-
                             <div class="card-body p-md-5 mx-md-4">
 
                                 <div class="text-center">
-
                                     <img src="https://t3.ftcdn.net/jpg/01/12/61/38/360_F_112613854_pw8ZkYdUo0zD4za7Fk1IcoXknuFNhdGM.jpg"
                                          style="width: 185px;" alt="logo">
-                                    <h4 class="mt-1 mb-5 pb-1 text-danger">Find the missing piece of your
-                                        family</h4>
+                                    <h4 class="mt-1 mb-5 pb-1 text-danger">Find the missing piece of your family</h4>
                                 </div>
-                                <form method="POST" th:action="@{/user/messages/sent}" th:object="${sendMessageBinding}">
+
+                                <form method="POST" th:action="@{/user/add-shelter}" enctype="multipart/form-data" th:object="${addShelterBinding}">
+
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example11">Receiver</label>
+                                        <label class="form-label text-danger" for="form2Example11">Name</label>
                                         <input type="text" id="form2Example11" th:errorclass="is-invalid"
-                                               th:field="*{username}" class="form-control text-danger">
+                                               th:field="*{name}" class="form-control text-danger">
                                         <p class="invalid-feedback errors alert alert-danger">
-                                            Invalid username (min = 4,max = 20)
+                                            Invalid name (min=1)
                                         </p>
-                                        <p th:unless="${contains}" class="errors alert alert-danger">
-                                            Non exists username
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label text-danger">Image</label>
+                                        <input type="file" th:field="*{image}" name="imageUrl" th:errorclass="is-invalid"
+                                               class="form-control text-danger">
+                                        <p th:if="${incorrectImage}" class="errors alert alert-danger">
+                                            Invalid image
                                         </p>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example11">Title</label>
-                                        <input type="text" th:errorclass="is-invalid"
-                                               th:field="*{title}" class="form-control text-danger">
-                                        <p class="invalid-feedback errors alert alert-danger">
-                                            Invalid title (min = 4,max = 20)
-                                        </p>
+                                        <label class="form-label text-danger" for="form2Example22">Description</label>
+                                        <textarea th:field="*{description}" th:errorclass="is-invalid"
+                                                  id="form2Example22" class="form-control text-danger"></textarea>
                                     </div>
 
-                                    <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example11">Message</label>
-                                        <textarea type="text" th:errorclass="is-invalid"
-                                                  th:field="*{description}" class="form-control text-danger"></textarea>
-                                        <p class="invalid-feedback errors alert alert-danger">
-                                            Invalid message (min = 10)
-                                        </p>
-                                    </div>
+
 
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <input type="submit"
                                                class="btn btn-danger fs-1 btn-block fa-lg gradient-custom-2 pb-2 pt-2 mt-5"
-                                               value="Sent">
+                                               value="Register">
                                     </div>
+
 
                                 </form>
                             </div>
@@ -75,7 +68,6 @@
         </div>
     </div>
 </section>
-
 <footer th:replace="fragment/fragments::footer">
     I am footer
 </footer>

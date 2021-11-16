@@ -150,7 +150,7 @@ public class InitServiceImpl  {
 
 
             regionService.addRegion(new Region().setName("Sofia-city"));
-            townService.addTown(new Town().setName("Sofia-city").setRegion(regionService.getRegion("Sofia-city")));
+            townService.addTown(new Town().setName("Sofia").setRegion(regionService.getRegion("Sofia-city")));
 
 
             regionService.addRegion(new Region().setName("Sofia"));
@@ -208,8 +208,12 @@ public class InitServiceImpl  {
 
             //add users
             userService.register(new RegisterService().setTown("Yambol").setPassword("12345").setUsername("admin").setEmail("admin@gmail.com").setUserType(UserType.USER));
+            User byId = userService.getById(1L);
+            byId.getRoles().add(userRoleService.getRoleById(1L));
+            userService.save(byId);
             userService.register(new RegisterService().setTown("Yambol").setPassword("12345").setUsername("user").setEmail("user@gmail.com").setUserType(UserType.USER));
             userService.register(new RegisterService().setTown("Yambol").setPassword("12345").setUsername("banned").setEmail("banned@gmail.com").setUserType(UserType.SHELTER));
+           userService.save(userService.getById(3L).setBanned(true));
             userService.register(new RegisterService().setTown("Yambol").setPassword("12345").setUsername("shelter").setEmail("shelter@gmail.com").setUserType(UserType.SHELTER));
 
         }
