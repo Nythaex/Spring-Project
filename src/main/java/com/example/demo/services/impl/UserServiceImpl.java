@@ -11,6 +11,7 @@ import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.TownService;
 import com.example.demo.services.UserRoleService;
 import com.example.demo.services.UserService;
+import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.access.AuthorizationServiceException;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -99,11 +100,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getById(Long id) {
+    public User getById(Long id)  {
         User byId = userRepository.findById(id).orElse(null);
-        if (byId==null){
-            throw new AuthorizationServiceException("Dont have an access");
-        }
+
         return byId;
     }
 

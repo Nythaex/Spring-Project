@@ -1,10 +1,11 @@
 package com.example.demo.web;
 
 import com.example.demo.models.bindings.AddAnimalBinding;
+import com.example.demo.models.bindings.AddWorkerBinding;
 import com.example.demo.models.services.AddAnimalService;
+import com.example.demo.models.services.AddWorkerService;
 import com.example.demo.services.ShelterService;
 import com.example.demo.services.impl.CurrentUser;
-import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
@@ -21,43 +22,46 @@ import java.io.IOException;
 import java.util.Base64;
 
 @Controller
-public class AnimalController {
+public class WorkerController {
+
     private ModelMapper modelMapper;
     private ShelterService shelterService;
 
-    public AnimalController(ModelMapper modelMapper, ShelterService shelterService) {
+    public WorkerController(ModelMapper modelMapper, ShelterService shelterService) {
         this.modelMapper = modelMapper;
         this.shelterService = shelterService;
     }
 
+
+
     @ModelAttribute
-    public AddAnimalBinding addAnimalBinding(){
-        return new AddAnimalBinding();
+    public AddWorkerBinding addWorkerBinding(){
+        return new AddWorkerBinding();
     }
 
-    @GetMapping("/user/shelter/add-animal")
-    public String getAddAnimal(Model model){
+    @GetMapping("/user/shelter/add-worker")
+    public String getAddWorker(Model model){
         if (!model.containsAttribute("incorrectImage")){
             model.addAttribute("incorrectImage",false);
         }
-        return "add-animal";
+        return "add-worker";
     }
-    @PostMapping(value = "/user/shelter/add-animal")
-    public String postAddShelter(@Valid AddAnimalBinding addAnimalBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser)  {
+    @PostMapping(value = "/user/shelter/add-worker")
+    public String postAddShelter(@Valid AddWorkerBinding addWorkerBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser)  {
 
-        String fileName= StringUtils.cleanPath(addAnimalBinding.getImage().getOriginalFilename());
+        String fileName= StringUtils.cleanPath(addWorkerBinding.getImage().getOriginalFilename());
         if (bindingResult.hasErrors()||fileName.length()<1||fileName.contains("..")) {
             if (fileName.length()<1||fileName.contains("..")){
                 redirectAttributes.addFlashAttribute("incorrectImage",true);
             }
-            redirectAttributes.addFlashAttribute("addAnimalBinding", addAnimalBinding);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addAnimalBinding", bindingResult);
-            return "redirect:/user/shelter/add-animal";
+            redirectAttributes.addFlashAttribute("addWorkerBinding", addWorkerBinding);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addWorkerBinding", bindingResult);
+            return "redirect:/user/shelter/add-worker";
         }
 
         try {
-            String image= Base64.getEncoder().encodeToString(addAnimalBinding.getImage().getBytes());
-            shelterService.addAnimal(modelMapper.map(addAnimalBinding, AddAnimalService.class).setImage(image),currentUser.getId());
+            String image= Base64.getEncoder().encodeToString(addWorkerBinding.getImage().getBytes());
+            shelterService.addWorker(modelMapper.map(addWorkerBinding, AddWorkerService.class).setImage(image),currentUser.getId());
         } catch ( IOException e) {
             e.printStackTrace();
         }

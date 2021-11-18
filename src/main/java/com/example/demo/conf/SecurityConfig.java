@@ -15,7 +15,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
     private PasswordEncoder passwordEncoder;
 
-    public SecurityConfig(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
+    public SecurityConfig(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) { 
         this.userDetailsService = userDetailsService;
         this.passwordEncoder = passwordEncoder;
     }
@@ -26,7 +26,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers("/login","/register","/about","/test").permitAll()
+                .antMatchers("/login","/register","/about").permitAll()
                 .antMatchers("/admin","admin/{id}/messages").hasRole("ADMIN")
                 .antMatchers("/user/add-shelter","/user/shelter/add-animal").hasRole("SHELTER")
                 .antMatchers("/**").authenticated()

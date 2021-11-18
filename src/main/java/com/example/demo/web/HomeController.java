@@ -7,6 +7,7 @@ import com.example.demo.models.view.ShelterView;
 import com.example.demo.services.ShelterService;
 import com.example.demo.services.UserService;
 import com.example.demo.services.impl.CurrentUser;
+import javassist.NotFoundException;
 import javassist.tools.web.BadHttpRequest;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
@@ -39,15 +40,17 @@ public class HomeController {
     }
 
 
+    @GetMapping("/error404")
+    public String get404(){
+        return "not-found";
+    }
 
     @GetMapping("/")
-    public String getHome(Model model ,@AuthenticationPrincipal CurrentUser user){
+    public String getHome(Model model ,@AuthenticationPrincipal CurrentUser user) {
      if (userService.getById(user.getId()).getShelter()!=null){
          if (userService.getById(user.getId()).getShelter().getImage()!=null){
-             ShelterView shelterView = modelMapper.map(userService.getById(user.getId()).getShelter(), ShelterView.class).setUsername(user.getUsername());
-             model.addAttribute("shelter",shelterView);
 
-             model.addAttribute("animals",shelterView.getAnimals().stream().sorted((s1,s2)->s1.getId().compareTo(s2.getId())).collect(Collectors.toList()));
+             return "redirect:/user/"+user.getId()+"/shelter";
 
          }else {
               return "redirect:/user/add-shelter";
@@ -63,7 +66,6 @@ public class HomeController {
 
     @GetMapping("/about")
     public String getAbout(){
-
         return "about";
     }
 }

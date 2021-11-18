@@ -8,10 +8,12 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Worker extends BasicEntity{
 
-    @Column(nullable = false,unique = true)
-    private String name;
+
+    private String firstName;
+    private String lastName;
     private String description;
-    private String imageUrl;
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private String image;
 
     @JoinColumn(nullable = false)
     @ManyToOne
@@ -20,18 +22,19 @@ public class Worker extends BasicEntity{
     public Worker() {
     }
 
-    public Worker(String name, String description, String imageUrl) {
-        this.name = name;
+    public Worker(String firstName, String lastName, String description, String image) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.description = description;
-        this.imageUrl=imageUrl;
+        this.image = image;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public Worker setName(String name) {
-        this.name = name;
+    public Worker setFirstName(String name) {
+        this.firstName = name;
         return this;
     }
 
@@ -53,12 +56,21 @@ public class Worker extends BasicEntity{
         return this;
     }
 
-    public String getImageUrl() {
-        return imageUrl;
+    public String getImage() {
+        return image;
     }
 
-    public Worker setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
+    public Worker setImage(String imageUrl) {
+        this.image = imageUrl;
+        return this;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public Worker setLastName(String lastName) {
+        this.lastName = lastName;
         return this;
     }
 }

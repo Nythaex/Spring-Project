@@ -5,6 +5,7 @@ import com.example.demo.models.services.AddShelterService;
 import com.example.demo.models.services.RegisterService;
 import com.example.demo.models.view.MessagesView;
 import com.example.demo.models.view.UserView;
+import javassist.NotFoundException;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public interface UserService {
 
     List<MessagesView> getMessagesTo(Long id);
 
-    User getById(Long id);
+    User getById(Long id) ;
 
     User getByName(String name);
 

@@ -1,9 +1,7 @@
 package com.example.demo.models.view;
 
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class ShelterView {
 
@@ -13,13 +11,15 @@ public class ShelterView {
     private String image;
     private String username;
     private LinkedList<AnimalView> animals;
+    private List<WorkerView> workers;
 
-    public ShelterView(Long id, String description, String name, String image, String username) {
+    public ShelterView(Long id, String description, String name, String image, String username, LinkedList<WorkerView> workers) {
         this.id = id;
         this.description = description;
         this.name = name;
         this.image = image;
         this.username = username;
+        this.workers = workers;
     }
 
     public ShelterView() {
@@ -80,6 +80,15 @@ public class ShelterView {
 
     public ShelterView setAnimals(LinkedList<AnimalView> animals) {
         this.animals = animals;
+        return this;
+    }
+
+    public List<WorkerView> getWorkers() {
+        return workers;
+    }
+
+    public ShelterView setWorkers(List<WorkerView> workers) {
+        this.workers = workers;
         return this;
     }
 }
