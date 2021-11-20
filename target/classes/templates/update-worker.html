@@ -24,14 +24,22 @@
                                     <h4 class="mt-1 mb-5 pb-1 text-danger">Find the missing piece of your family</h4>
                                 </div>
 
-                                <form method="POST" th:action="@{/user/add-shelter}" enctype="multipart/form-data" th:object="${addShelterBinding}">
+                                <form th:method="patch"  th:action="@{/worker/{id}/update(id=${id})}" enctype="multipart/form-data" th:object="${addWorkerBinding}">
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example11">Name</label>
+                                        <label class="form-label text-danger" for="form2Example11">First name</label>
                                         <input type="text" id="form2Example11" th:errorclass="is-invalid"
-                                               th:field="*{name}" class="form-control text-danger">
+                                               th:field="*{firstName}" class="form-control text-danger">
                                         <p class="invalid-feedback errors alert alert-danger">
-                                            Invalid name (min=1)
+                                            Invalid name (min=1,max=10)
+                                        </p>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label text-danger" for="form2Example11">Last name</label>
+                                        <input type="text" id="form2Example12" th:errorclass="is-invalid"
+                                               th:field="*{lastName}" class="form-control text-danger">
+                                        <p class="invalid-feedback errors alert alert-danger">
+                                            Invalid name (min=1,max=10)
                                         </p>
                                     </div>
                                     <div class="form-outline mb-4">
@@ -42,6 +50,7 @@
                                             Invalid image
                                         </p>
                                     </div>
+
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label text-danger" for="form2Example22">Description</label>
@@ -54,9 +63,8 @@
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <input type="submit"
                                                class="btn btn-danger fs-1 btn-block fa-lg gradient-custom-2 pb-2 pt-2 mt-5"
-                                               value="Register my shelter">
+                                               value="Update">
                                     </div>
-
 
 
                                 </form>

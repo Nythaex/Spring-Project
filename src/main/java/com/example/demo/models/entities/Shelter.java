@@ -18,13 +18,13 @@ public class Shelter extends BasicEntity{
     private String image;
 
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter",cascade = CascadeType.PERSIST)
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter")
     private Set<Animal> animals;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter",cascade = CascadeType.PERSIST)
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter")
     private Set<Worker> workers;
 
-    @OneToOne(fetch = FetchType.EAGER,mappedBy = "shelter",cascade = CascadeType.PERSIST)
+    @OneToOne(fetch = FetchType.EAGER,mappedBy = "shelter")
     private User user;
 
     public Shelter() {

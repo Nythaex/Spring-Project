@@ -75,8 +75,11 @@ public class MessageController {
            if (!model.containsAttribute("contains")){
                model.addAttribute("contains",true);
            }
+        if (!model.containsAttribute("notSameUsername")){
+            model.addAttribute("notSameUsername",true);
+        }
 
-        return "sent-message";
+        return "send-message";
     }
 
     @PostMapping("/user/messages/sent")
@@ -84,7 +87,7 @@ public class MessageController {
 
 
 
-        if (bindingResult.hasErrors()||userService.getByName(sendMessageBinding.getUsername())==null) {
+        if (bindingResult.hasErrors()||userService.getByName(sendMessageBinding.getUsername())==null||httpServletRequest.getUserPrincipal().getName().equals(sendMessageBinding.getUsername())) {
 
             redirectAttributes.addFlashAttribute("sendMessageBinding", sendMessageBinding);
 
@@ -93,6 +96,9 @@ public class MessageController {
 
             if (userService.getByName(sendMessageBinding.getUsername())==null){
                 redirectAttributes.addFlashAttribute("contains",false);
+            }
+            if (httpServletRequest.getUserPrincipal().getName().equals(sendMessageBinding.getUsername())){
+                redirectAttributes.addFlashAttribute("notSameUsername",false);
             }
             return "redirect:/user/messages/sent";
         }

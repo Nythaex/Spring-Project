@@ -8,8 +8,10 @@ import javax.validation.constraints.Size;
 
 public class AddWorkerBinding {
     @NotBlank
-    @Size(min = 1)
+    @Size(min = 1,max = 10)
     private String firstName;
+    @NotBlank
+    @Size(min = 1,max = 10)
     private String lastName;
 
 

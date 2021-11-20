@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 import com.example.demo.models.entities.User;
 import com.example.demo.models.services.AddShelterService;
+import com.example.demo.models.services.AddWorkerService;
 import com.example.demo.models.services.RegisterService;
 import com.example.demo.models.view.MessagesView;
 import com.example.demo.models.view.UserView;
@@ -39,4 +40,7 @@ public interface UserService {
 
 
     void save(User byId);
+
+
+
 }

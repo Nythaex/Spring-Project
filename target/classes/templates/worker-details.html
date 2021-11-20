@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="https://www.thymeleaf.org/"
+      xmlns:sec='http://www.thymeleaf.org/extras/spring-security'>
+<head th:replace="fragment/fragments::head">
+</head>
+<body>
+<header th:insert="fragment/fragments::nav">
+</header>
+
+<section  style="background:linear-gradient(90deg, rgba(177,180,58,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); " class="pt-2 container-fluid"  >
+
+
+
+    <article  th:object="${worker}" class="container-fluid border-danger border-2  text-center  col-md-5">
+        <div class="card">
+            <img th:src="@{'data:image/jpeg;base64,'+*{image}}" alt="There is not a picture"
+                 class="">
+            <div >
+                <h1  class="" th:text="*{fullName}">Card title</h1>
+                <h5  th:text="*{description}">Description</h5>
+            </div>
+            <div th:if="${mine}" class="d-flex justify-content-around ">
+                <a class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-3 pt-2 pb-2" th:href="@{/worker/{id}/update(id=*{id})}">Update</a>
+                <form th:action="@{/user/{uId}/worker/{id}/delete(uId=${userId},id=*{id})}" th:method="delete" >
+                    <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-3 pt-2 pb-2" th:value="Delete">
+                </form>
+            </div>
+
+        </div>
+
+    </article>
+</section>
+
+<footer th:replace="fragment/fragments::footer">
+    I am footer
+</footer>
+</body>
+</html>

@@ -10,33 +10,34 @@
 
 <section
         style="background:linear-gradient(90deg, rgba(177,180,58,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); "
-        class="pt-2 container-fluid d-flex">
+        class="pt-2 container-fluid  ">
 
-    <section class="card  border-danger border-3  col-md-3 col-sm-12  me-1 mt-2">
+    <div class="row">
+
+    <section class="card  border-danger border-3 col-md-3 col-sm-3 col-8  mx-4 mt-2 ">
         <p class="text-center border-bottom border-danger border-3 text-danger">Workers</p>
-        <article th:each="w:${workers}" th:object="${w}" class="border-bottom border-danger">
+        <article th:each="w:${workers}" th:object="${w}" class="border-bottom border-danger row">
 
             <div class="card-body d-flex justify-content-between">
-                <img th:src="@{'data:image/jpeg;base64,'+*{image}}" alt="There is not a picture"
-                     class="img-fluid rounded col-md-2 col-sm-2 ">
 
-                <span class="text-dark fs-5  bg-white font-size ">  <span class="card-title text-dark mr-3"
+
+                <span class="text-dark fs-5  bg-white font-size ">  <span class="card-title text-dark mr-2"
                                                                                  th:text="*{fullName}">Name</span></span>
 
-                <a class="text-danger fs-5 text-decoration-none " th:href="@{/user/shelter/worker/{id}(id=*{id})}">Details</a>
+                <a class="text-danger fs-5 text-decoration-none " th:href="@{/user/{userId}/shelter/worker/{id}/details(id=*{id},userId=${userId})}">Details</a>
             </div>
 
 
         </article>
     </section>
 
-    <div class=" mt-2 col-md-9 col-sm-12">
+    <div class=" mt-2 col-md-8 col-sm-2 col-8 ">
         <article th:object="${shelter}" class="card  border-danger border-2 mt-1 ">
             <ul th:if="${mine}" class=" justify-content-around list-unstyled  d-flex">
                 <li class="ms-3"><a class="text-danger fs-2 text-decoration-none " href="/user/shelter/add-animal">Add
                     Animal</a></li>
                 <li class="ms-3"><a class="text-danger fs-2 text-decoration-none"
-                                    href="https://twitter.com/AmsterDogRescue">Update shelter</a></li>
+                                    href="/user/shelter/update">Update shelter</a></li>
                 <li class="ms-3"><a class="text-danger fs-2 text-decoration-none" href="/user/shelter/add-worker">Add
                     Worker</a></li>
 
@@ -58,23 +59,23 @@
 
         </article>
         <p></p>
-        <article th:each="a:${animals}" th:object="${a}" class="card  border-danger border-3  col-md-12 col-sm-9 mt-1">
+        <article th:each="a:${animals}" th:object="${a}" class="card  border-danger border-3  col-md-12 col-sm-12 col-12 mt-1">
 
             <div class="card-body d-flex justify-content-between">
                 <img th:src="@{'data:image/jpeg;base64,'+*{image}}" alt="There is not a picture"
                      class="img-fluid rounded col-md-1 col-sm-1 ">
 
-                <span class=" fs-4  bg-white font-size "> Name: <span class="card-title mr-3"
+                <span class=" fs-4  bg-white font-size ">  <span class="card-title mr-3"
                                                                                  th:text="*{name}">Name</span></span>
-                <span class=" fs-4  bg-white  font-size fs-1 "> Animal type: <span
+                <span class=" fs-4  bg-white  font-size fs-1 "> <span
                         class="card-subtitle mb-2 text- " th:text="*{animalType}">Animal type</span></span>
-                <a class="text-danger fs-2 text-decoration-none fs-5 " th:href="@{/user/shelter/animal/{id}(id=*{id})}">Details</a>
+                <a class="text-danger fs-2 text-decoration-none fs-5 " th:href="@{/user/{userId}/shelter/animal/{id}/details(id=*{id},userId=${userId})}">Details</a>
             </div>
 
 
         </article>
     </div>
-
+    </div>
 </section>
 
 

@@ -1,9 +1,6 @@
 package com.example.demo.models.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Worker extends BasicEntity{
@@ -16,7 +13,7 @@ public class Worker extends BasicEntity{
     private String image;
 
     @JoinColumn(nullable = false)
-    @ManyToOne
+    @ManyToOne()
     private Shelter shelter;
 
     public Worker() {

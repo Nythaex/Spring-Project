@@ -14,10 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -39,7 +36,7 @@ public class ShelterController {
 
     @GetMapping("/user/{id}/shelter")
     public String getShelterHome(Model model , @PathVariable Long id,@AuthenticationPrincipal CurrentUser user) {
-        if (userService.getById(id)==null||userService.getById(id).getShelter()==null||userService.getById(id).getShelter().getName()==null){
+        if (userService.getById(id)==null||userService.getById(id).getShelter()==null||userService.getById(id).getShelter().getName()==null|| userService.getById(id).getBanned()){
             return "redirect:/error404";
         }
 
@@ -48,6 +45,7 @@ public class ShelterController {
         List<WorkerView> collect = userService.getById(id).getShelter().getWorkers().stream().map(s -> modelMapper.map(s, WorkerView.class).setFullName(s.getFirstName() + " " + s.getLastName())).collect(Collectors.toList());
         shelterView.setWorkers(collect);
 
+                model.addAttribute("userId",id);
                 model.addAttribute("shelter",shelterView);
                 model.addAttribute("mine",user.getId().toString().equals(id.toString()));
                 model.addAttribute("animals",shelterView.getAnimals().stream().sorted((s1,s2)->s1.getId().compareTo(s2.getId())).collect(Collectors.toList()));
@@ -66,11 +64,14 @@ public class ShelterController {
     }
 
     @GetMapping("/user/add-shelter")
-    public String getAddShelter (Model model){
+    public String getAddShelter (Model model,@AuthenticationPrincipal CurrentUser currentUser){
+        if (userService.getById(currentUser.getId()).getShelter().getName()!=null){
+            return "redirect:/user/"+currentUser.getId()+"/shelter";
+        }
+
         if (!model.containsAttribute("incorrectImage")){
             model.addAttribute("incorrectImage",false);
         }
-
         return "add-shelter";
     }
     @PostMapping(value = "/user/add-shelter")
@@ -96,6 +97,44 @@ public class ShelterController {
         return "redirect:/";
     }
 
+
+    @GetMapping("/user/shelter/update")
+    public String getUpdateShelter (Model model,@AuthenticationPrincipal CurrentUser currentUser){
+        if (userService.getById(currentUser.getId()).getShelter().getName()==null){
+            return "redirect:/user/add-shelter";
+        }
+        if (!model.containsAttribute("incorrectImage")){
+            model.addAttribute("incorrectImage",false);
+        }
+
+
+        return "update-shelter";
+    }
+        @PatchMapping("/user/shelter/update")
+    public String updateShelter(@Valid AddShelterBinding addShelterBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser)  {
+
+
+
+
+        String fileName= StringUtils.cleanPath(addShelterBinding.getImage().getOriginalFilename());
+        if (bindingResult.hasErrors()||fileName.length()<1||fileName.contains("..")) {
+            if (fileName.length()<1||fileName.contains("..")){
+                redirectAttributes.addFlashAttribute("incorrectImage",true);
+            }
+            redirectAttributes.addFlashAttribute("addShelterBinding", addShelterBinding);
+            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addShelterBinding", bindingResult);
+            return "redirect:/user/shelter/update";
+        }
+
+        try {
+            String image= Base64.getEncoder().encodeToString(addShelterBinding.getImage().getBytes());
+            userService.saveShelterByUserId(currentUser.getId(),modelMapper.map(addShelterBinding, AddShelterService.class).setImage(image));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return "redirect:/";
+    }
 
 
 
