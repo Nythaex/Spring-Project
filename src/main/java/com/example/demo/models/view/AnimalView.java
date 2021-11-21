@@ -1,16 +1,11 @@
 package com.example.demo.models.view;
 
 public class AnimalView {
-
+    private Long userId;
     private Long id;
     private String name;
-
-
     private String description;
-
-
     private String image;
-
     private String animalType;
 
     public AnimalView(Long id) {
@@ -20,7 +15,8 @@ public class AnimalView {
     public AnimalView() {
     }
 
-    public AnimalView(Long id, String name, String description, String image, String animalType) {
+    public AnimalView(Long userId, Long id, String name, String description, String image, String animalType) {
+        this.userId = userId;
         this.id = id;
         this.name = name;
         this.description = description;
@@ -70,6 +66,15 @@ public class AnimalView {
 
     public AnimalView setAnimalType(String animalType) {
         this.animalType = animalType;
+        return this;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public AnimalView setUserId(Long userId) {
+        this.userId = userId;
         return this;
     }
 }

@@ -29,6 +29,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login","/register","/about","/error404").permitAll()
                 .antMatchers("/admin","admin/{id}/messages").hasRole("ADMIN")
                 .antMatchers("/user/add-shelter","/user/shelter/add-animal","/user/shelter/add-worker","/user/shelter/update","/worker/{id}/update","/animal/{id}/update").hasRole("SHELTER")
+                .antMatchers("/search","/search/result").hasRole("USER")
                 .antMatchers("/**").authenticated()
                 .and().formLogin()
                 .loginPage("/login")

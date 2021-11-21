@@ -1,12 +1,14 @@
 package com.example.demo.models.view;
 
 public class WorkerView {
+    private Long userId;
     private Long id;
     private String fullName;
     private String description;
     private String image;
 
-    public WorkerView(Long id, String fullName, String description, String image) {
+    public WorkerView(Long userId, Long id, String fullName, String description, String image) {
+        this.userId = userId;
         this.id = id;
         this.fullName = fullName;
         this.description = description;
@@ -49,6 +51,15 @@ public class WorkerView {
 
     public WorkerView setImage(String image) {
         this.image = image;
+        return this;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public WorkerView setUserId(Long userId) {
+        this.userId = userId;
         return this;
     }
 }

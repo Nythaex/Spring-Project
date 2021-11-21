@@ -2,6 +2,9 @@ package com.example.demo.web;
 
 import com.example.demo.models.bindings.AddAnimalBinding;
 import com.example.demo.models.bindings.AddWorkerBinding;
+import com.example.demo.models.entities.UserRole;
+import com.example.demo.models.enums.Role;
+import com.example.demo.models.enums.UserType;
 import com.example.demo.models.services.AddAnimalService;
 import com.example.demo.models.services.AddWorkerService;
 import com.example.demo.models.view.AnimalView;
@@ -80,12 +83,16 @@ public class AnimalController {
     @GetMapping("/user/{userId}/shelter/animal/{id}/details")
     public String getAnimalDetails(Model model, @PathVariable Long userId, @PathVariable Long id, @AuthenticationPrincipal CurrentUser currentUser){
 
+
         if (userService.getById(userId)==null||userService.getById(userId).getShelter()==null){
             return "redirect:/error404";
         }
         AnimalView animalView = userService.getById(userId).getShelter().getAnimals().stream().filter(w -> Objects.equals(w.getId(), id)).map(w -> modelMapper.map(w,AnimalView.class)).findFirst().orElse(null);
         if (animalView==null){
             return "redirect:/error404";
+        }
+        if(!Objects.equals(userId, currentUser.getId())&&userService.getById(currentUser.getId()).getRoles().stream().filter(r->r.getRole().equals(Role.SHELTER)).findFirst().orElse(null)!=null){
+            return "redirect:/";
         }
 
         model.addAttribute("mine",Objects.equals(userId, currentUser.getId()));
