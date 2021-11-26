@@ -34,12 +34,12 @@
     <div class=" mt-2 col-md-8 col-sm-2 col-8 ">
         <article th:object="${shelter}" class="card  border-danger border-2 mt-1 ">
             <ul th:if="${mine}" class=" justify-content-around list-unstyled  d-flex">
-                <li class="ms-3"><a class="text-danger fs-2 text-decoration-none " href="/user/shelter/add-animal">Add
-                    Animal</a></li>
-                <li class="ms-3"><a class="text-danger fs-2 text-decoration-none"
-                                    href="/user/shelter/update">Update shelter</a></li>
                 <li class="ms-3"><a class="text-danger fs-2 text-decoration-none" href="/user/shelter/add-worker">Add
                     Worker</a></li>
+                <li class="ms-3"><a class="text-danger fs-2 text-decoration-none"
+                                    href="/user/shelter/update">Update shelter</a></li>
+                <li class="ms-3"><a class="text-danger fs-2 text-decoration-none " href="/user/shelter/add-animal">Add
+                    Animal</a></li>
 
             </ul>
 
@@ -48,7 +48,7 @@
                 <p class="text-danger fs-1 card-header bg-white  border-danger border-5 rounded">Username: <span
                         class="card-title text-danger" th:text="*{username}">Username </span></p>
                 <p></p>
-                <img th:src="@{'data:image/jpeg;base64,'+*{image}}" alt="There is not a picture"
+                <img th:src="@{*{image}}" alt="There is not a picture"
                      class="img-fluid rounded">
                 <p class="text-danger fs-3 card-header bg-white  text-dark border-2">Shelter name: <span
                         class="card-title text-dark" th:text="*{name}"></span></p>
@@ -62,7 +62,7 @@
         <article th:each="a:${animals}" th:object="${a}" class="card  border-danger border-3  col-md-12 col-sm-12 col-12 mt-1">
 
             <div class="card-body d-flex justify-content-between">
-                <img th:src="@{'data:image/jpeg;base64,'+*{image}}" alt="There is not a picture"
+                <img th:src="@{*{image}}" alt="There is not a picture"
                      class="img-fluid rounded col-md-1 col-sm-1 ">
 
                 <span class=" fs-4  bg-white font-size ">  <span class="card-title mr-3"

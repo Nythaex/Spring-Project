@@ -11,8 +11,8 @@ import java.util.stream.Collectors;
 
 @Service
 public class TownServiceImpl implements TownService {
-    private TownRepository townRepository;
-    private ModelMapper modelMapper;
+    private final TownRepository townRepository;
+    private final ModelMapper modelMapper;
 
     public TownServiceImpl(TownRepository townRepository, ModelMapper modelMapper) {
         this.townRepository = townRepository;

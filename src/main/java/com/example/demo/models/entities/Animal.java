@@ -2,10 +2,7 @@ package com.example.demo.models.entities;
 
 import com.example.demo.models.enums.AnimalTypes;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 @Entity
 public class Animal extends BasicEntity{
@@ -13,8 +10,9 @@ public class Animal extends BasicEntity{
 
     private String name;
     private String description;
-    @Column(columnDefinition = "MEDIUMBLOB")
-    private String image;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    private Image image;
     @JoinColumn()
     @ManyToOne()
     private Shelter shelter;
@@ -22,9 +20,10 @@ public class Animal extends BasicEntity{
     private AnimalTypes animalType;
 
     public Animal() {
+        this.image=new Image();
     }
 
-    public Animal(String name, String description, Shelter shelter,AnimalTypes animalType,String image) {
+    public Animal(String name, String description, Shelter shelter, AnimalTypes animalType, Image image) {
         this.name = name;
         this.description = description;
         this.shelter = shelter;
@@ -68,12 +67,12 @@ public class Animal extends BasicEntity{
         return this;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public Animal setImage(String image) {
+    public Animal setImage(Image image) {
         this.image = image;
         return this;
+    }
+
+    public Image getImage() {
+        return image;
     }
 }

@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MessageServiceImpl implements MessageService {
-    private MessageRepository messageRepository;
-    private ModelMapper modelMapper;
-    private UserService userService;
+    private final MessageRepository messageRepository;
+    private final ModelMapper modelMapper;
+    private final UserService userService;
 
     public MessageServiceImpl(MessageRepository messageRepository, ModelMapper modelMapper, UserService userService) {
         this.messageRepository = messageRepository;

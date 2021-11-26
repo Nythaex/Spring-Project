@@ -16,7 +16,7 @@
     <article th:each="a:${animals}" th:object="${a}" class="card  border-danger border-3  col-md-12 col-sm-12 col-12 mt-1">
 
         <div class="card-body d-flex justify-content-between">
-            <img th:src="@{'data:image/jpeg;base64,'+*{image}}" alt="There is not a picture"
+            <img th:src="@{*{image}}" alt="There is not a picture"
                  class="img-fluid rounded col-md-1 col-sm-1 ">
 
             <span class=" fs-4  bg-white font-size ">  <span class="card-title mr-3"

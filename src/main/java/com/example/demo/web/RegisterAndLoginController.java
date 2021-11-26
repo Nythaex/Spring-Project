@@ -1,14 +1,18 @@
 package com.example.demo.web;
 
 
-import com.example.demo.models.bindings.LoginBinding;
 import com.example.demo.models.bindings.RegisterBinding;
-import com.example.demo.models.enums.UserType;
+import com.example.demo.models.entities.User;
 import com.example.demo.models.services.RegisterService;
 import com.example.demo.services.ShelterService;
 import com.example.demo.services.TownService;
 import com.example.demo.services.UserService;
+import com.example.demo.services.impl.CurrentUserServiceImpl;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -17,9 +21,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.ArrayList;
 
 @Controller
 public class RegisterAndLoginController {
@@ -27,12 +29,14 @@ public class RegisterAndLoginController {
     private ShelterService shelterService;
     private ModelMapper modelMapper;
     private TownService townService;
+    private CurrentUserServiceImpl currentUserService;
 
-    public RegisterAndLoginController(UserService userService, ShelterService shelterService, ModelMapper modelMapper, TownService townService) {
+    public RegisterAndLoginController(UserService userService, ShelterService shelterService, ModelMapper modelMapper, TownService townService, CurrentUserServiceImpl currentUserService) {
         this.userService = userService;
         this.shelterService = shelterService;
         this.modelMapper = modelMapper;
         this.townService = townService;
+        this.currentUserService = currentUserService;
     }
 
     @ModelAttribute
@@ -51,6 +55,8 @@ public class RegisterAndLoginController {
         return "register";
     }
 
+
+
     @PostMapping("/register")
     public String postRegister(@Valid RegisterBinding registerBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 
@@ -65,11 +71,18 @@ public class RegisterAndLoginController {
             return "redirect:/register";
         }
 
-        userService.register(modelMapper.map(registerBinding, RegisterService.class));
+        User registered = userService.register(modelMapper.map(registerBinding, RegisterService.class));
 
+        UserDetails principal= currentUserService.loadUserByUsername(registerBinding.getEmail());
+        Authentication authentication=new UsernamePasswordAuthenticationToken(principal,registered.getPassword(), principal.getAuthorities());
 
-        return "redirect:/login";
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+
+        return "redirect:/";
     }
+
+
+
 
 
     @GetMapping("/login")

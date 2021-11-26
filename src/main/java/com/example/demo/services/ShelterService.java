@@ -6,7 +6,8 @@ import com.example.demo.models.services.AddWorkerService;
 public interface ShelterService {
 
 
-    void addAnimal(AddAnimalService animal, Long id);
 
-    void addWorker(AddWorkerService worker, Long id);
+    void addWorker(AddWorkerService map, String url, String publicId, Long id);
+
+    void addAnimal(AddAnimalService map, String url, String publicId, Long id);
 }

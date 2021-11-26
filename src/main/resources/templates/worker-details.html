@@ -14,7 +14,7 @@
 
     <article  th:object="${worker}" class="container-fluid border-danger border-2  text-center  col-md-5">
         <div class="card">
-            <img th:src="@{'data:image/jpeg;base64,'+*{image}}" alt="There is not a picture"
+            <img th:src="@{*{image}}" alt="There is not a picture"
                  class="">
             <div >
                 <h1  class="" th:text="*{fullName}">Card title</h1>

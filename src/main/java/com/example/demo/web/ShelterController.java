@@ -1,55 +1,62 @@
 package com.example.demo.web;
 
 import com.example.demo.models.bindings.AddShelterBinding;
+import com.example.demo.models.entities.User;
 import com.example.demo.models.services.AddShelterService;
 import com.example.demo.models.view.ShelterView;
 import com.example.demo.models.view.WorkerView;
+import com.example.demo.services.AnimalService;
+import com.example.demo.services.CloudinaryService;
 import com.example.demo.services.UserService;
+import com.example.demo.services.WorkerService;
+import com.example.demo.services.impl.CloudinaryImage;
 import com.example.demo.services.impl.CurrentUser;
-import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
-import org.springframework.data.crossstore.ChangeSetPersister;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.Base64;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Controller
 public class ShelterController {
     private UserService userService;
+    private AnimalService animalService;
+    private WorkerService workerService;
     private ModelMapper modelMapper;
+    private CloudinaryService cloudinaryService;
 
-    public ShelterController(UserService userService, ModelMapper modelMapper) {
+    public ShelterController(UserService userService, AnimalService animalService, WorkerService workerService, ModelMapper modelMapper, CloudinaryService cloudinaryService) {
         this.userService = userService;
+        this.animalService = animalService;
+        this.workerService = workerService;
         this.modelMapper = modelMapper;
+        this.cloudinaryService = cloudinaryService;
     }
 
     @GetMapping("/user/{id}/shelter")
     public String getShelterHome(Model model , @PathVariable Long id,@AuthenticationPrincipal CurrentUser user) {
-        if (userService.getById(id)==null||userService.getById(id).getShelter()==null||userService.getById(id).getShelter().getName()==null|| userService.getById(id).getBanned()){
+        User userById = userService.getById(id);
+        if (userById ==null|| userById.getShelter()==null|| userById.getShelter().getName()==null|| userById.getBanned()){
             return "redirect:/error404";
         }
 
-                ShelterView shelterView = modelMapper.map(userService.getById(id).getShelter(), ShelterView.class).setUsername(userService.getById(id).getUsername());
+                ShelterView shelterView = modelMapper.map(userById.getShelter(), ShelterView.class).setUsername(userById.getUsername()).setImage(userById.getShelter().getImage().getUrl());
 
-        List<WorkerView> collect = userService.getById(id).getShelter().getWorkers().stream().map(s -> modelMapper.map(s, WorkerView.class).setFullName(s.getFirstName() + " " + s.getLastName())).collect(Collectors.toList());
+        List<WorkerView> collect = userById.getShelter().getWorkers().stream().map(s -> modelMapper.map(s, WorkerView.class).setFullName(s.getFirstName() + " " + s.getLastName())).collect(Collectors.toList());
         shelterView.setWorkers(collect);
 
                 model.addAttribute("userId",id);
                 model.addAttribute("shelter",shelterView);
                 model.addAttribute("mine",user.getId().toString().equals(id.toString()));
-                model.addAttribute("animals",shelterView.getAnimals().stream().sorted((s1,s2)->s1.getId().compareTo(s2.getId())).collect(Collectors.toList()));
-                model.addAttribute("workers",shelterView.getWorkers().stream().sorted((s1,s2)->s1.getId().compareTo(s2.getId())).collect(Collectors.toList()));
+                model.addAttribute("animals",shelterView.getAnimals().stream().sorted((s1,s2)->s1.getId().compareTo(s2.getId())).map(a->animalService.getAnimalView(a.getId())).collect(Collectors.toList()));
+                model.addAttribute("workers",shelterView.getWorkers().stream().sorted((s1,s2)->s1.getId().compareTo(s2.getId())).map(w->workerService.getWorkerView(w.getId())).collect(Collectors.toList()));
 
 
 
@@ -75,11 +82,11 @@ public class ShelterController {
         return "add-shelter";
     }
     @PostMapping(value = "/user/add-shelter")
-    public String postAddShelter(@Valid AddShelterBinding addShelterBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser)  {
+    public String postAddShelter(@Valid AddShelterBinding addShelterBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser) throws IOException {
 
-        String fileName= StringUtils.cleanPath(addShelterBinding.getImage().getOriginalFilename());
-        if (bindingResult.hasErrors()||fileName.length()<1||fileName.contains("..")) {
-            if (fileName.length()<1||fileName.contains("..")){
+
+        if (bindingResult.hasErrors()||addShelterBinding.getImage().getOriginalFilename().equals("")) {
+            if (addShelterBinding.getImage().getOriginalFilename().equals("")){
                 redirectAttributes.addFlashAttribute("incorrectImage",true);
             }
             redirectAttributes.addFlashAttribute("addShelterBinding", addShelterBinding);
@@ -87,12 +94,9 @@ public class ShelterController {
             return "redirect:/user/add-shelter";
         }
 
-        try {
-            String image= Base64.getEncoder().encodeToString(addShelterBinding.getImage().getBytes());
-            userService.saveShelterByUserId(currentUser.getId(),modelMapper.map(addShelterBinding, AddShelterService.class).setImage(image));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        CloudinaryImage upload = this.cloudinaryService.upload(addShelterBinding.getImage());
+            userService.saveShelterByUserId(currentUser.getId(),modelMapper.map(addShelterBinding, AddShelterService.class).setImageUrl(upload.getUrl()).setImageId(upload.getPublicId()));
+
 
         return "redirect:/";
     }
@@ -100,25 +104,25 @@ public class ShelterController {
 
     @GetMapping("/user/shelter/update")
     public String getUpdateShelter (Model model,@AuthenticationPrincipal CurrentUser currentUser){
-        if (userService.getById(currentUser.getId()).getShelter().getName()==null){
+        User userById = userService.getById(currentUser.getId());
+        if (userById.getShelter().getName()==null){
             return "redirect:/user/add-shelter";
         }
         if (!model.containsAttribute("incorrectImage")){
             model.addAttribute("incorrectImage",false);
         }
 
-
+       model.addAttribute("addShelterBinding",new AddShelterBinding().setName(userById.getShelter().getName()).setDescription(userById.getShelter().getDescription()));
         return "update-shelter";
     }
         @PatchMapping("/user/shelter/update")
-    public String updateShelter(@Valid AddShelterBinding addShelterBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser)  {
+    public String updateShelter(@Valid AddShelterBinding addShelterBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser) throws IOException {
+
+         cloudinaryService.delete(userService.getById(currentUser.getId()).getShelter().getImage().getPublicId());
 
 
-
-
-        String fileName= StringUtils.cleanPath(addShelterBinding.getImage().getOriginalFilename());
-        if (bindingResult.hasErrors()||fileName.length()<1||fileName.contains("..")) {
-            if (fileName.length()<1||fileName.contains("..")){
+        if (bindingResult.hasErrors()||addShelterBinding.getImage().getOriginalFilename().equals("")) {
+            if (addShelterBinding.getImage().getOriginalFilename().equals("")){
                 redirectAttributes.addFlashAttribute("incorrectImage",true);
             }
             redirectAttributes.addFlashAttribute("addShelterBinding", addShelterBinding);
@@ -126,12 +130,9 @@ public class ShelterController {
             return "redirect:/user/shelter/update";
         }
 
-        try {
-            String image= Base64.getEncoder().encodeToString(addShelterBinding.getImage().getBytes());
-            userService.saveShelterByUserId(currentUser.getId(),modelMapper.map(addShelterBinding, AddShelterService.class).setImage(image));
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+            CloudinaryImage upload = this.cloudinaryService.upload(addShelterBinding.getImage());
+            userService.saveShelterByUserId(currentUser.getId(),modelMapper.map(addShelterBinding, AddShelterService.class).setImageUrl(upload.getUrl()).setImageId(upload.getPublicId()));
+
 
         return "redirect:/";
     }

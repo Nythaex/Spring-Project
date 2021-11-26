@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class RegionServiceImpl implements RegionService {
-    private RegionRepository regionRepository;
+    private final RegionRepository regionRepository;
 
     public RegionServiceImpl(RegionRepository regionRepository) {
         this.regionRepository = regionRepository;

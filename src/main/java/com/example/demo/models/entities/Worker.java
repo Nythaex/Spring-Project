@@ -9,21 +9,23 @@ public class Worker extends BasicEntity{
     private String firstName;
     private String lastName;
     private String description;
-    @Column(columnDefinition = "MEDIUMBLOB")
-    private String image;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Image image;
 
     @JoinColumn(nullable = false)
     @ManyToOne()
     private Shelter shelter;
 
     public Worker() {
+        this.image=new Image();
     }
 
-    public Worker(String firstName, String lastName, String description, String image) {
+    public Worker(String firstName, String lastName, String description, Image image) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.description = description;
         this.image = image;
+        this.image=new Image();
     }
 
     public String getFirstName() {
@@ -53,12 +55,12 @@ public class Worker extends BasicEntity{
         return this;
     }
 
-    public String getImage() {
+    public Image getImage() {
         return image;
     }
 
-    public Worker setImage(String imageUrl) {
-        this.image = imageUrl;
+    public Worker setImage(Image image) {
+        this.image = image;
         return this;
     }
 

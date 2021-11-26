@@ -49,7 +49,7 @@ public class HomeController {
     @GetMapping("/")
     public String getHome(Model model, @AuthenticationPrincipal CurrentUser user) {
         if (userService.getById(user.getId()).getShelter() != null) {
-            if (userService.getById(user.getId()).getShelter().getImage() != null) {
+            if (userService.getById(user.getId()).getShelter()==null) {
 
                 return "redirect:/user/" + user.getId() + "/shelter";
 

@@ -1,7 +1,5 @@
 package com.example.demo.models.services;
 
-import org.springframework.web.multipart.MultipartFile;
-
 public class AddWorkerService {
 
     private String firstName;
@@ -10,13 +8,12 @@ public class AddWorkerService {
 
     private String description;
 
-    private String image;
 
-    public AddWorkerService(String firstName, String lastName, String description, String image) {
+
+    public AddWorkerService(String firstName, String lastName, String description) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.description = description;
-        this.image = image;
     }
 
     public AddWorkerService() {
@@ -40,14 +37,6 @@ public class AddWorkerService {
         return this;
     }
 
-    public String getImage() {
-        return image;
-    }
-
-    public AddWorkerService setImage(String image) {
-        this.image = image;
-        return this;
-    }
 
     public String getLastName() {
         return lastName;

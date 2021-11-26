@@ -1,5 +1,6 @@
 package com.example.demo.services.impl;
 
+import com.example.demo.models.entities.Image;
 import com.example.demo.models.entities.Shelter;
 import com.example.demo.models.entities.User;
 import com.example.demo.models.enums.UserType;
@@ -11,9 +12,7 @@ import com.example.demo.repositories.UserRepository;
 import com.example.demo.services.TownService;
 import com.example.demo.services.UserRoleService;
 import com.example.demo.services.UserService;
-import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.access.AuthorizationServiceException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -24,9 +23,9 @@ import java.util.stream.Collectors;
 public class UserServiceImpl implements UserService {
     private final UserRepository userRepository;
     private final UserRoleService userRoleService;
-    private ModelMapper modelMapper;
-    private TownService townService;
-    private PasswordEncoder passwordEncoder;
+    private final ModelMapper modelMapper;
+    private final TownService townService;
+    private final PasswordEncoder passwordEncoder;
 
 
     public UserServiceImpl(UserRepository userRepository, UserRoleService userRoleService, ModelMapper modelMapper, TownService townService, PasswordEncoder passwordEncoder) {
@@ -64,7 +63,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public void register(RegisterService service) {
+    public User register(RegisterService service) {
         User user = modelMapper.map(service, User.class).setTown(townService.getByName(service.getTown())).setPassword(passwordEncoder.encode(service.getPassword()));
         if (service.getUserType() == UserType.SHELTER){
             user.setShelter(new Shelter().setUser(user));
@@ -75,7 +74,7 @@ public class UserServiceImpl implements UserService {
 
 
         userRepository.save(user);
-
+          return user;
     }
 
     @Override
@@ -119,8 +118,8 @@ public class UserServiceImpl implements UserService {
     @Override
     public void saveShelterByUserId(Long id, AddShelterService shelter) {
         User user = userRepository.findById(id).orElse(null);
-        Shelter map = modelMapper.map(shelter, Shelter.class);
-        user.getShelter().setImage(map.getImage()).setName(map.getName()).setDescription(map.getDescription());
+
+        user.getShelter().setName(shelter.getName()).setDescription(shelter.getDescription()).getImage().setUrl(shelter.getImageUrl()).setPublicId(shelter.getImageId());
         userRepository.save(user);
 
     }

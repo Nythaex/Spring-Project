@@ -1,9 +1,6 @@
 package com.example.demo.models.services;
 
 import com.example.demo.models.enums.AnimalTypes;
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.validation.constraints.NotNull;
 
 public class AddAnimalService {
     private String name;
@@ -12,16 +9,18 @@ public class AddAnimalService {
     private String description;
 
 
-    private String image;
+    private String imageUrl;
+    private String imageId;
 
 
 
     private AnimalTypes animalType;
 
-    public AddAnimalService(String name, String description, String image, AnimalTypes animalType) {
+    public AddAnimalService(String name, String description, String imageUrl, String imageId, AnimalTypes animalType) {
         this.name = name;
         this.description = description;
-        this.image = image;
+        this.imageUrl = imageUrl;
+        this.imageId = imageId;
         this.animalType = animalType;
     }
 
@@ -46,12 +45,21 @@ public class AddAnimalService {
         return this;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageId() {
+        return imageId;
     }
 
-    public AddAnimalService setImage(String image) {
-        this.image = image;
+    public AddAnimalService setImageId(String imageId) {
+        this.imageId = imageId;
+        return this;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public AddAnimalService setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
         return this;
     }
 

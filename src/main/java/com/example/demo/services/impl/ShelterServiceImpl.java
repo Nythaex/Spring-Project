@@ -15,11 +15,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ShelterServiceImpl implements ShelterService {
-    private ShelterRepository shelterRepository;
-    private UserService userService;
-    private ModelMapper modelMapper;
-    private AnimalService animalService;
-    private WorkerService workerService;
+    private final ShelterRepository shelterRepository;
+    private final UserService userService;
+    private final ModelMapper modelMapper;
+    private final AnimalService animalService;
+    private final WorkerService workerService;
 
     public ShelterServiceImpl(ShelterRepository shelterRepository, UserService userService, ModelMapper modelMapper, AnimalService animalService, WorkerService workerService) {
         this.shelterRepository = shelterRepository;
@@ -29,18 +29,23 @@ public class ShelterServiceImpl implements ShelterService {
         this.workerService = workerService;
     }
 
-
     @Override
-    public void addAnimal(AddAnimalService map, Long id) {
+    public void addWorker(AddWorkerService map, String url, String publicId,Long id) {
         Shelter shelter = userService.getById(id).getShelter();
-        Animal animal= modelMapper.map(map, Animal.class).setShelter(shelter);
-        animalService.save(animal);
+        Worker worker= modelMapper.map(map, Worker.class).setShelter(shelter);
+
+        worker.getImage().setUrl(url).setPublicId(publicId);
+        workerService.save(worker);
     }
 
     @Override
-    public void addWorker(AddWorkerService map, Long id) {
+    public void addAnimal(AddAnimalService map, String url, String publicId, Long id) {
         Shelter shelter = userService.getById(id).getShelter();
-        Worker worker= modelMapper.map(map, Worker.class).setShelter(shelter);
-        workerService.save(worker);
+        Animal animal= modelMapper.map(map, Animal.class).setShelter(shelter);
+
+
+        animal.getImage().setUrl(url).setPublicId(publicId);
+
+        animalService.save(animal);
     }
 }

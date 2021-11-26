@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class UserRoleServiceImpl implements UserRoleService {
-    private UserRoleRepository userRoleRepository;
+    private final UserRoleRepository userRoleRepository;
 
     public UserRoleServiceImpl(UserRoleRepository userRoleRepository) {
         this.userRoleRepository = userRoleRepository;

@@ -1,22 +1,19 @@
 package com.example.demo.models.services;
 
-import org.springframework.web.multipart.MultipartFile;
-
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-
 public class AddShelterService {
     private String description;
 
     private String name;
 
 
-    private String image;
+    private String imageUrl;
+    private String imageId;
 
-    public AddShelterService(String description, String name, String image) {
+    public AddShelterService(String description, String name, String imageUrl, String imageId) {
         this.description = description;
         this.name = name;
-        this.image = image;
+        this.imageUrl = imageUrl;
+        this.imageId = imageId;
     }
 
     public AddShelterService() {
@@ -40,12 +37,21 @@ public class AddShelterService {
         return this;
     }
 
-    public String getImage() {
-        return image;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public AddShelterService setImage(String image) {
-        this.image = image;
+    public AddShelterService setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+        return this;
+    }
+
+    public String getImageId() {
+        return imageId;
+    }
+
+    public AddShelterService setImageId(String imageId) {
+        this.imageId = imageId;
         return this;
     }
 }

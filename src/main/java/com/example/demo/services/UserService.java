@@ -2,11 +2,9 @@ package com.example.demo.services;
 
 import com.example.demo.models.entities.User;
 import com.example.demo.models.services.AddShelterService;
-import com.example.demo.models.services.AddWorkerService;
 import com.example.demo.models.services.RegisterService;
 import com.example.demo.models.view.MessagesView;
 import com.example.demo.models.view.UserView;
-import javassist.NotFoundException;
 
 import java.util.List;
 
@@ -19,7 +17,7 @@ public interface UserService {
 
     boolean banned(String email);
 
-    void register(RegisterService service);
+    User register(RegisterService service);
 
     List<UserView> getAllUsers();
 

@@ -1,7 +1,6 @@
 package com.example.demo.models.entities;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +13,8 @@ public class Shelter extends BasicEntity{
 
     private String name;
 
-    @Column(columnDefinition = "MEDIUMBLOB")
-    private String image;
+    @OneToOne(cascade = CascadeType.ALL)
+    private Image image;
 
 
     @OneToMany(fetch = FetchType.EAGER,mappedBy = "shelter")
@@ -30,14 +29,15 @@ public class Shelter extends BasicEntity{
     public Shelter() {
         this.workers=new HashSet<>();
         this.animals=new HashSet<>();
+        this.image=new Image();
     }
 
-    public Shelter(String description, String name, String imageUrl) {
+    public Shelter(String description, String name, Image image ) {
         this.workers=new HashSet<>();
         this.animals=new HashSet<>();
         this.description = description;
         this.name = name;
-       this.image =imageUrl;
+        this.image=image;
     }
 
     public String getName() {
@@ -85,11 +85,11 @@ public class Shelter extends BasicEntity{
         return this;
     }
 
-    public String getImage() {
+    public Image getImage() {
         return image;
     }
 
-    public Shelter setImage(String image) {
+    public Shelter setImage(Image image) {
         this.image = image;
         return this;
     }

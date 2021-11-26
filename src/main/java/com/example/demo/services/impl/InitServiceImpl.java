@@ -18,11 +18,11 @@ import java.util.HashSet;
 
 @Service
 public class InitServiceImpl  {
-    private TownService townService;
-    private RegionService regionService;
-    private UserRoleService userRoleService;
-    private UserService userService;
-    private PasswordEncoder encoder;
+    private final TownService townService;
+    private final RegionService regionService;
+    private final UserRoleService userRoleService;
+    private final UserService userService;
+    private final PasswordEncoder encoder;
 
     public InitServiceImpl(TownService townService, RegionService regionService, UserRoleService userRoleService, UserService userService, PasswordEncoder encoder) {
         this.townService = townService;
