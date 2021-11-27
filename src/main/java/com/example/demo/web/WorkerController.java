@@ -9,7 +9,10 @@ import com.example.demo.services.UserService;
 import com.example.demo.services.WorkerService;
 import com.example.demo.services.impl.CloudinaryImage;
 import com.example.demo.services.impl.CurrentUser;
+import com.example.demo.web.exeptions.ObjectNotFoundExeption;
+import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -44,7 +47,7 @@ public class WorkerController {
         return new AddWorkerBinding();
     }
 
-    @GetMapping("/user/shelter/add-worker")
+    @GetMapping("/shelter/add-worker")
     public String getAddWorker(Model model, @AuthenticationPrincipal CurrentUser currentUser) {
         if (userService.getById(currentUser.getId()).getShelter().getName() == null) {
             return "redirect:/user/add-shelter";
@@ -55,17 +58,17 @@ public class WorkerController {
         return "add-worker";
     }
 
-    @PostMapping(value = "/user/shelter/add-worker")
+    @PostMapping(value = "/shelter/add-worker")
     public String postAddWorker(@Valid AddWorkerBinding addWorkerBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser) throws IOException {
 
 
-        if (bindingResult.hasErrors() || addWorkerBinding.getImage().getOriginalFilename().equals("")) {
-            if (addWorkerBinding.getImage().getOriginalFilename().equals("")) {
+        if (bindingResult.hasErrors() || Objects.equals(addWorkerBinding.getImage().getOriginalFilename(), "")) {
+            if (Objects.equals(addWorkerBinding.getImage().getOriginalFilename(), "")) {
                 redirectAttributes.addFlashAttribute("incorrectImage", true);
             }
             redirectAttributes.addFlashAttribute("addWorkerBinding", addWorkerBinding);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addWorkerBinding", bindingResult);
-            return "redirect:/user/shelter/add-worker";
+            return "redirect:/shelter/add-worker";
         }
 
         CloudinaryImage upload = this.cloudinaryService.upload(addWorkerBinding.getImage());
@@ -77,15 +80,15 @@ public class WorkerController {
 
 
     @GetMapping("/user/{userId}/shelter/worker/{id}/details")
-    public String getWorkerDetails(Model model, @PathVariable Long userId, @PathVariable Long id, @AuthenticationPrincipal CurrentUser currentUser) {
+    public String getWorkerDetails(Model model, @PathVariable Long userId, @PathVariable Long id, @AuthenticationPrincipal CurrentUser currentUser) throws NotFoundException {
 
         if (userService.getById(userId) == null || userService.getById(userId).getShelter() == null) {
-            return "redirect:/error404";
+           throw new ObjectNotFoundExeption("Not found");
         }
         WorkerView workerView = workerService.getWorkerView(id);
 
         if (workerView == null) {
-            return "redirect:/error404";
+            throw new ObjectNotFoundExeption("Not found");
         }
 
         model.addAttribute("mine", Objects.equals(userId, currentUser.getId()));
@@ -95,18 +98,18 @@ public class WorkerController {
 
         return "worker-details";
     }
-
-    @DeleteMapping("/user/{uId}/worker/{id}/delete")
-    public String deleteWorker(@PathVariable Long id) {
+    
+    @DeleteMapping("/worker/{id}/delete")
+    public String deleteWorker(@PathVariable Long id,@AuthenticationPrincipal CurrentUser currentUser) {
         workerService.deleteById(id);
 
         return "redirect:/";
     }
 
     @GetMapping("worker/{id}/update")
-    public String getUpdateWorker(Model model, @AuthenticationPrincipal CurrentUser currentUser, @PathVariable Long id) {
+    public String getUpdateWorker(Model model, @AuthenticationPrincipal CurrentUser currentUser, @PathVariable Long id) throws NotFoundException {
         if (!workerService.contains(id)) {
-            return "redirect:/error404";
+            throw new ObjectNotFoundExeption("Not found");
         }
         if (userService.getById(currentUser.getId()).getShelter().getName() == null) {
             return "redirect:/user/add-shelter";
@@ -134,8 +137,8 @@ public class WorkerController {
         cloudinaryService.delete(workerService.getById(id).getImage().getPublicId());
 
 
-        if (bindingResult.hasErrors()||addWorkerBinding.getImage().getOriginalFilename().equals("")) {
-            if (addWorkerBinding.getImage().getOriginalFilename().equals("")) {
+        if (bindingResult.hasErrors()|| Objects.equals(addWorkerBinding.getImage().getOriginalFilename(), "")) {
+            if (Objects.equals(addWorkerBinding.getImage().getOriginalFilename(), "")) {
                 redirectAttributes.addFlashAttribute("incorrectImage", true);
             }
             redirectAttributes.addFlashAttribute("addWorkerBinding", addWorkerBinding);

@@ -46,11 +46,6 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-    @GetMapping("/test")
-    public String get(){
-
-        return "test";
-    }
 
 
 

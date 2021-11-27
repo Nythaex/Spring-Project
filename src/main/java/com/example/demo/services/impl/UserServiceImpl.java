@@ -17,6 +17,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 @Service
@@ -51,6 +52,10 @@ public class UserServiceImpl implements UserService {
     public boolean match(String email, String password) {
         User byEmail = userRepository.findByEmail(email);
         return byEmail.getPassword().equals(password);
+    }
+    @Override
+    public boolean isOwner(Long principalId,Long ownerId){
+        return Objects.equals(principalId, ownerId);
     }
 
     @Override

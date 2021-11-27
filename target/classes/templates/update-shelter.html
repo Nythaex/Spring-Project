@@ -24,7 +24,7 @@
                                     <h4 class="mt-1 mb-5 pb-1 text-danger">Find the missing piece of your family</h4>
                                 </div>
 
-                                <form th:method="patch" th:action="@{/user/shelter/update}" enctype="multipart/form-data" th:object="${addShelterBinding}">
+                                <form th:method="patch" th:action="@{/shelter/update}" enctype="multipart/form-data" th:object="${addShelterBinding}">
                                     <div class="form-outline mb-4">
                                         <label class="form-label text-danger" for="form2Example11">Name</label>
                                         <input type="text" id="form2Example11" th:errorclass="is-invalid"

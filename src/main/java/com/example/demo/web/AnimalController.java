@@ -4,7 +4,6 @@ import com.example.demo.models.bindings.AddAnimalBinding;
 import com.example.demo.models.enums.AnimalTypes;
 import com.example.demo.models.enums.Role;
 import com.example.demo.models.services.AddAnimalService;
-import com.example.demo.models.services.AddWorkerService;
 import com.example.demo.models.view.AnimalView;
 import com.example.demo.services.AnimalService;
 import com.example.demo.services.CloudinaryService;
@@ -12,18 +11,18 @@ import com.example.demo.services.ShelterService;
 import com.example.demo.services.UserService;
 import com.example.demo.services.impl.CloudinaryImage;
 import com.example.demo.services.impl.CurrentUser;
+import com.example.demo.web.exeptions.ObjectNotFoundExeption;
+import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import javax.validation.Valid;
 import java.io.IOException;
-import java.util.Base64;
 import java.util.Objects;
 
 @Controller
@@ -47,10 +46,10 @@ public class AnimalController {
         return new AddAnimalBinding();
     }
 
-    @GetMapping("/user/shelter/add-animal")
+    @GetMapping("/shelter/add-animal")
     public String getAddAnimal(Model model, @AuthenticationPrincipal CurrentUser currentUser) {
         if (userService.getById(currentUser.getId()).getShelter().getName() == null) {
-            return "redirect:/user/add-shelter";
+            return "redirect:/add-shelter";
         }
         if (!model.containsAttribute("incorrectImage")) {
             model.addAttribute("incorrectImage", false);
@@ -58,7 +57,7 @@ public class AnimalController {
         return "add-animal";
     }
 
-    @PostMapping(value = "/user/shelter/add-animal")
+    @PostMapping(value = "/shelter/add-animal")
     public String postAddAnimal(@Valid AddAnimalBinding addAnimalBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser) throws IOException {
 
 
@@ -68,7 +67,7 @@ public class AnimalController {
             }
             redirectAttributes.addFlashAttribute("addAnimalBinding", addAnimalBinding);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addAnimalBinding", bindingResult);
-            return "redirect:/user/shelter/add-animal";
+            return "redirect:/shelter/add-animal";
 
         }
         CloudinaryImage upload = cloudinaryService.upload(addAnimalBinding.getImage());
@@ -81,16 +80,16 @@ public class AnimalController {
 
 
     @GetMapping("/user/{userId}/shelter/animal/{id}/details")
-    public String getAnimalDetails(Model model, @PathVariable Long userId, @PathVariable Long id, @AuthenticationPrincipal CurrentUser currentUser) {
+    public String getAnimalDetails(Model model, @PathVariable Long userId, @PathVariable Long id, @AuthenticationPrincipal CurrentUser currentUser) throws NotFoundException {
 
 
         if (userService.getById(userId) == null || userService.getById(userId).getShelter() == null) {
-            return "redirect:/error404";
+            throw new ObjectNotFoundExeption("Not found");
         }
         AnimalView animalView = animalService.getAnimalView(id);
 
         if (animalView == null) {
-            return "redirect:/error404";
+            throw new ObjectNotFoundExeption("Animal not found");
         }
         if (!Objects.equals(userId, currentUser.getId()) && userService.getById(currentUser.getId()).getRoles().stream().filter(r -> r.getRole().equals(Role.SHELTER)).findFirst().orElse(null) != null) {
             return "redirect:/";
@@ -105,7 +104,7 @@ public class AnimalController {
         return "animal-details";
     }
 
-    @DeleteMapping("/user/{uId}/animal/{id}/delete")
+    @DeleteMapping("/animal/{id}/delete")
     public String deleteAnimal(@PathVariable Long id) {
         animalService.deleteById(id);
 
@@ -114,9 +113,9 @@ public class AnimalController {
 
 
     @GetMapping("/animal/{id}/update")
-    public String getUpdateAnimal(Model model, @AuthenticationPrincipal CurrentUser currentUser, @PathVariable Long id) {
+    public String getUpdateAnimal(Model model, @AuthenticationPrincipal CurrentUser currentUser, @PathVariable Long id) throws NotFoundException {
         if (!animalService.contains(id)) {
-            return "redirect:/error404";
+            throw new ObjectNotFoundExeption("Not found");
         }
         if (userService.getById(currentUser.getId()).getShelter().getName() == null) {
             return "redirect:/user/add-shelter";

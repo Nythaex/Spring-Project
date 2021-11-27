@@ -11,7 +11,11 @@ import com.example.demo.services.UserService;
 import com.example.demo.services.WorkerService;
 import com.example.demo.services.impl.CloudinaryImage;
 import com.example.demo.services.impl.CurrentUser;
+import com.example.demo.web.exeptions.ObjectNotFoundExeption;
+import javassist.NotFoundException;
+import org.hibernate.ObjectDeletedException;
 import org.modelmapper.ModelMapper;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -40,12 +44,13 @@ public class ShelterController {
         this.cloudinaryService = cloudinaryService;
     }
 
-    @GetMapping("/user/{id}/shelter")
-    public String getShelterHome(Model model , @PathVariable Long id,@AuthenticationPrincipal CurrentUser user) {
+    @GetMapping("/shelter/{id}")
+    public String getShelterHome(Model model , @PathVariable Long id,@AuthenticationPrincipal CurrentUser user) throws NotFoundException {
         User userById = userService.getById(id);
         if (userById ==null|| userById.getShelter()==null|| userById.getShelter().getName()==null|| userById.getBanned()){
-            return "redirect:/error404";
+            throw new ObjectNotFoundExeption("Not found");
         }
+
 
                 ShelterView shelterView = modelMapper.map(userById.getShelter(), ShelterView.class).setUsername(userById.getUsername()).setImage(userById.getShelter().getImage().getUrl());
 
@@ -73,7 +78,7 @@ public class ShelterController {
     @GetMapping("/user/add-shelter")
     public String getAddShelter (Model model,@AuthenticationPrincipal CurrentUser currentUser){
         if (userService.getById(currentUser.getId()).getShelter().getName()!=null){
-            return "redirect:/user/"+currentUser.getId()+"/shelter";
+            return "redirect:/shelter/"+currentUser.getId();
         }
 
         if (!model.containsAttribute("incorrectImage")){
@@ -102,7 +107,7 @@ public class ShelterController {
     }
 
 
-    @GetMapping("/user/shelter/update")
+    @GetMapping("/shelter/update")
     public String getUpdateShelter (Model model,@AuthenticationPrincipal CurrentUser currentUser){
         User userById = userService.getById(currentUser.getId());
         if (userById.getShelter().getName()==null){
@@ -115,7 +120,8 @@ public class ShelterController {
        model.addAttribute("addShelterBinding",new AddShelterBinding().setName(userById.getShelter().getName()).setDescription(userById.getShelter().getDescription()));
         return "update-shelter";
     }
-        @PatchMapping("/user/shelter/update")
+
+        @PatchMapping("/shelter/update")
     public String updateShelter(@Valid AddShelterBinding addShelterBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @AuthenticationPrincipal CurrentUser currentUser) throws IOException {
 
          cloudinaryService.delete(userService.getById(currentUser.getId()).getShelter().getImage().getPublicId());
@@ -127,7 +133,7 @@ public class ShelterController {
             }
             redirectAttributes.addFlashAttribute("addShelterBinding", addShelterBinding);
             redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addShelterBinding", bindingResult);
-            return "redirect:/user/shelter/update";
+            return "redirect:/shelter/update";
         }
 
             CloudinaryImage upload = this.cloudinaryService.upload(addShelterBinding.getImage());

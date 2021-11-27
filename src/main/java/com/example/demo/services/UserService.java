@@ -15,6 +15,8 @@ public interface UserService {
 
     boolean match(String email, String password);
 
+    boolean isOwner(Long principalId, Long ownerId);
+
     boolean banned(String email);
 
     User register(RegisterService service);

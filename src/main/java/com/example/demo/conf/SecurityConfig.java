@@ -3,6 +3,7 @@ package com.example.demo.conf;
 import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,6 +12,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
     private PasswordEncoder passwordEncoder;
@@ -26,9 +28,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers("/login","/register","/about","/error404").permitAll()
+                .antMatchers("/login","/register","/about").permitAll()
                 .antMatchers("/admin","admin/{id}/messages").hasRole("ADMIN")
-                .antMatchers("/user/add-shelter","/user/shelter/add-animal","/user/shelter/add-worker","/user/shelter/update","/worker/{id}/update","/animal/{id}/update").hasRole("SHELTER")
+                .antMatchers("/user/add-shelter","/shelter/add-animal","/shelter/add-worker","/shelter/update","/worker/{id}/update","/animal/{id}/update").hasRole("SHELTER")
                 .antMatchers("/search","/search/result").hasRole("USER")
                 .antMatchers("/**").authenticated()
                 .and().formLogin()
