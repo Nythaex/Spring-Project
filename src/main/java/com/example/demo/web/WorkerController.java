@@ -9,10 +9,9 @@ import com.example.demo.services.UserService;
 import com.example.demo.services.WorkerService;
 import com.example.demo.services.impl.CloudinaryImage;
 import com.example.demo.services.impl.CurrentUser;
-import com.example.demo.web.exeptions.ObjectNotFoundExeption;
+import com.example.demo.utils.exeptions.ObjectNotFoundExeption;
 import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
-import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -98,7 +97,7 @@ public class WorkerController {
 
         return "worker-details";
     }
-    
+
     @DeleteMapping("/worker/{id}/delete")
     public String deleteWorker(@PathVariable Long id,@AuthenticationPrincipal CurrentUser currentUser) {
         workerService.deleteById(id);

@@ -1,6 +1,6 @@
 package com.example.demo.conf;
 
-import com.example.demo.web.exeptions.ObjectNotFoundExeption;
+import com.example.demo.utils.exeptions.ObjectNotFoundExeption;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;

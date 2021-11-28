@@ -21,34 +21,34 @@
                                 <div class="text-center">
                                     <img src="https://t3.ftcdn.net/jpg/01/12/61/38/360_F_112613854_pw8ZkYdUo0zD4za7Fk1IcoXknuFNhdGM.jpg"
                                          style="width: 185px;" alt="logo">
-                                    <h4 class="mt-1 mb-5 pb-1 text-danger">Find the missing piece of your family</h4>
+                                    <h4 class="mt-1 mb-5 pb-1 text-danger" th:text="#{logoText}">Find the missing piece of your family</h4>
                                 </div>
 
                                 <form method="POST" th:action="@{/login}">
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example11">Email address</label>
+                                        <label class="form-label text-danger" for="form2Example11" th:text="#{email}">Email address</label>
                                         <input type="email" id="form2Example11" th:errorclass="is-invalid"
                                                th:value="${email}" name="email" class="form-control text-danger">
-                                        <p class="invalid-feedback errors alert alert-danger">
+                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{existingEmail}">
                                             Invalid or non exists email
                                         </p>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example22">Password</label>
+                                        <label class="form-label text-danger" for="form2Example22" th:text="#{password}">Password</label>
                                         <input type="password" name="password"
                                                id="form2Example22" class="form-control text-danger">
-                                        <p class="invalid-feedback errors alert alert-danger">
+                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidPassword}">
                                             Invalid password.
                                         </p>
                                     </div>
 
-                                    <p th:if="${banned}" class="errors alert alert-danger">
+                                    <p th:if="${banned}" class="errors alert alert-danger" th:text="#{bannedEmail}">
                                        User with this email has been banned.
                                     </p>
 
-                                    <p th:if="${failed}" class="errors alert alert-danger">
+                                    <p th:if="${failed}" class="errors alert alert-danger" th:text="#{invalidLogin}">
                                             Invalid email or password.
                                     </p>
 
@@ -56,7 +56,7 @@
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <input type="submit"
                                                class="btn btn-danger fs-1 btn-block fa-lg gradient-custom-2 pb-2 pt-2 mt-5"
-                                               value="Login">
+                                               th:value="#{login}">
                                     </div>
 
 

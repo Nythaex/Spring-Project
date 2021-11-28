@@ -25,40 +25,40 @@
 
                                     <img src="https://t3.ftcdn.net/jpg/01/12/61/38/360_F_112613854_pw8ZkYdUo0zD4za7Fk1IcoXknuFNhdGM.jpg"
                                          style="width: 185px;" alt="logo">
-                                    <h4 class="mt-1 mb-5 pb-1 text-danger">Find the missing piece of your
+                                    <h4 class="mt-1 mb-5 pb-1 text-danger" th:text="#{logoText}">Find the missing piece of your
                                         family</h4>
                                 </div>
                                 <form method="POST" th:action="@{/user/messages/sent}" th:object="${sendMessageBinding}">
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example11">Receiver</label>
+                                        <label class="form-label text-danger" for="form2Example11" th:text="#{receiver}">Receiver</label>
                                         <input type="text" id="form2Example11" th:errorclass="is-invalid"
                                                th:field="*{username}" class="form-control text-danger">
-                                        <p class="invalid-feedback errors alert alert-danger">
+                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidUsername}">
                                             Invalid username (min = 4,max = 20)
                                         </p>
-                                        <p th:unless="${contains}" class="errors alert alert-danger">
+                                        <p th:unless="${contains}" class="errors alert alert-danger" th:text="#{nonExistsUsername}">
                                             Non exists username
                                         </p>
-                                        <p th:unless="${notSameUsername}" class="errors alert alert-danger">
-                                            This is you
+                                        <p th:unless="${notSameUsername}" class="errors alert alert-danger" th:text="#{thisIsYour}">
+                                           This is your username
                                         </p>
 
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example11">Title</label>
+                                        <label class="form-label text-danger" for="form2Example11" th:text="#{title}">Title</label>
                                         <input type="text" th:errorclass="is-invalid"
                                                th:field="*{title}" class="form-control text-danger">
-                                        <p class="invalid-feedback errors alert alert-danger">
+                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidTitle}">
                                             Invalid title (min = 4,max = 20)
                                         </p>
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example11">Message</label>
+                                        <label class="form-label text-danger" for="form2Example11" th:text="#{message}">Message</label>
                                         <textarea type="text" th:errorclass="is-invalid"
                                                   th:field="*{description}" class="form-control text-danger"></textarea>
-                                        <p class="invalid-feedback errors alert alert-danger">
+                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidMessage}">
                                             Invalid message (min = 10)
                                         </p>
                                     </div>
@@ -66,7 +66,7 @@
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <input type="submit"
                                                class="btn btn-danger fs-1 btn-block fa-lg gradient-custom-2 pb-2 pt-2 mt-5"
-                                               value="Sent">
+                                               th:value="#{sent}">
                                     </div>
 
                                 </form>

@@ -21,24 +21,24 @@
                                 <div class="text-center">
                                     <img src="https://t3.ftcdn.net/jpg/01/12/61/38/360_F_112613854_pw8ZkYdUo0zD4za7Fk1IcoXknuFNhdGM.jpg"
                                          style="width: 185px;" alt="logo">
-                                    <h4 class="mt-1 mb-5 pb-1 text-danger">Find the missing piece of your family</h4>
+                                    <h4 class="mt-1 mb-5 pb-1 text-danger" th:text="#{logoText}">Find the missing piece of your family</h4>
                                 </div>
 
                                 <form method="POST" th:action="@{/shelter/add-animal}" enctype="multipart/form-data" th:object="${addAnimalBinding}">
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example11">Name</label>
+                                        <label class="form-label text-danger" for="form2Example11" th:text="#{name}">Name</label>
                                         <input type="text" id="form2Example11" th:errorclass="is-invalid"
                                                th:field="*{name}" class="form-control text-danger">
-                                        <p class="invalid-feedback errors alert alert-danger">
+                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidName}">
                                             Invalid name (min=1,max=20)
                                         </p>
                                     </div>
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger">Image</label>
+                                        <label class="form-label text-danger" th:text="#{image}">Image</label>
                                         <input type="file" th:field="*{image}" name="imageUrl" th:errorclass="is-invalid"
                                                class="form-control text-danger">
-                                        <p th:if="${incorrectImage}" class="errors alert alert-danger">
+                                        <p th:if="${incorrectImage}" class="errors alert alert-danger" th:text="#{invalidImage}">
                                             Invalid image
                                         </p>
                                     </div>
@@ -46,18 +46,18 @@
                                     <div class="form-outline mb-4">
                                         <label class="form-label text-danger" >Animal Type</label>
                                         <select  class="form-control" th:errorclass="is-invalid" name="animalType">
-                                            <option value="">- Select animal type -</option>
+                                            <option th:text="#{selectAnimalType}"  value="">- Select animal type -</option>
                                             <option th:each="t:${T(com.example.demo.models.enums.AnimalTypes).values()}" th:text="${t}" th:value="${t}" th:selected="${t}==*{animalType}"> Town
                                             </option>
                                         </select>
-                                        <p class="invalid-feedback errors alert alert-danger">
+                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidType}">
                                             Select type
                                         </p>
 
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" for="form2Example22">Description</label>
+                                        <label class="form-label text-danger" for="form2Example22" th:text="#{description}">Description</label>
                                         <textarea th:field="*{description}" th:errorclass="is-invalid"
                                                   id="form2Example22" class="form-control text-danger"></textarea>
                                     </div>
@@ -67,7 +67,7 @@
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <input type="submit"
                                                class="btn btn-danger fs-1 btn-block fa-lg gradient-custom-2 pb-2 pt-2 mt-5"
-                                               value="Add animal">
+                                               th:value="#{addAnimal}">
                                     </div>
 
 

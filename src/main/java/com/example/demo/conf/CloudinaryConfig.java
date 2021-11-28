@@ -14,11 +14,7 @@ public class CloudinaryConfig {
         return cloudName;
     }
 
-    /**
-     * Sets the cloud name associated with the cloudinary account.
-     * @param cloudName the cloud name associated with the cloudinary account.
-     * @return this
-     */
+
     public CloudinaryConfig setCloudName(String cloudName) {
         this.cloudName = cloudName;
         return this;

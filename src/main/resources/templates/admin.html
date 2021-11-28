@@ -17,21 +17,21 @@
         <article th:each="u:${users}" th:object="${u}" class="card container border-danger border-2 mt-2 "  >
             <div class="card-body  mt-2" >
 
-                <p class="text-danger fs-4 card-header bg-white  border-danger">Username: <span class="card-title text-danger" th:text="*{username}">Username</span></p>
+                <p class="text-danger fs-4 card-header bg-white  border-danger"><span  th:text="#{username}">Username</span>: <span class="card-title text-danger" th:text="*{username}">Username</span></p>
                 <p></p>
-                <p class="text-danger fs-5">Email: <span class="card-subtitle mb-2 text-danger" th:text="*{email}">Email</span></p>
-                <p class="text-danger fs-5">Town: <span class="card-text text-danger" th:text="*{town}"></span></p>
-                <p class="text-danger fs-5">Shelter: <span class="card-text text-danger" th:text="*{registeredAsShelter}"></span></p>
+                <p class="text-danger fs-5"><span  th:text="#{email}">Email</span>: <span class="card-subtitle mb-2 text-danger" th:text="*{email}">Email</span></p>
+                <p class="text-danger fs-5"><span  th:text="#{town}">Town</span>: <span class="card-text text-danger" th:text="*{town}"></span></p>
+                <p class="text-danger fs-5"><span  th:text="#{shelter}">Is shelter</span>: <span class="card-text text-danger" th:text="*{registeredAsShelter}"></span></p>
                 <div class="d-flex justify-content-between">
 
                     <form th:unless="*{isBanned}" th:action="@{/admin/{id}/ban(id=*{id})}" th:method="patch">
-                        <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-1 pt-2 pb-2" th:value="Ban">
+                        <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-1 pt-2 pb-2" th:value="#{ban}">
                     </form>
                     <form th:if="*{isBanned}" th:action="@{/admin/{id}/unban(id=*{id})}" th:method="patch">
-                        <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-1 pt-2 pb-2" th:value="Unban">
+                        <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-1 pt-2 pb-2" th:value="#{unban}">
                     </form>
                     <form th:action="@{/user/{id}/messages(id=*{id})}" th:method="get">
-                        <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-1 pt-2 pb-2" th:value="Messages">
+                        <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-1 pt-2 pb-2" th:value="#{messages}">
                     </form>
                 </div>
 

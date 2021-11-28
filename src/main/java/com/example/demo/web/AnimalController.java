@@ -11,7 +11,7 @@ import com.example.demo.services.ShelterService;
 import com.example.demo.services.UserService;
 import com.example.demo.services.impl.CloudinaryImage;
 import com.example.demo.services.impl.CurrentUser;
-import com.example.demo.web.exeptions.ObjectNotFoundExeption;
+import com.example.demo.utils.exeptions.ObjectNotFoundExeption;
 import javassist.NotFoundException;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

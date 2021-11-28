@@ -11,29 +11,29 @@
 <section  style="background:linear-gradient(90deg, rgba(177,180,58,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%); " class="min-vh-100 pt-2 container-fluid"  >
 
     <form th:action="@{/user/messages/sent}"   method="get" class="text-center" >
-        <input type="submit" class="btn bg-white text-danger fs-1 btn-block fa-lg gradient-custom-2 mb-5 mt-5 pt-3 pb-3" value="Send message">
+        <input type="submit" class="btn bg-white text-danger fs-1 btn-block fa-lg gradient-custom-2 mb-5 mt-5 pt-3 pb-3" th:value="#{sendMessage}">
     </form>
 
 
           <article th:if="${messages.size()==0}">
-              <div class="fs-1 text-center text-white">No</div>
-              <div class="fs-1 text-center text-white">messages</div>
+              <div class="fs-1 text-center text-white" th:text="#{no}">No</div>
+              <div class="fs-1 text-center text-white" th:text="#{messages}">messages</div>
           </article>
 
     <article th:each="m:${messages}" th:object="${m}" class="card container border-danger border-2 mt-2 text-center">
         <div class="card-body" >
 
-            <p class="text-danger fs-4 card-header bg-white  border-danger">Title: <span class="card-title text-danger" th:text="*{title}">Title</span></p>
+            <p class="text-danger fs-4 card-header bg-white  border-danger"><span th:text="#{title}">Title</span>: <span class="card-title text-danger" th:text="*{title}">Title</span></p>
             <p></p>
             <div class="d-flex justify-content-between">
-                <p class="text-danger fs-4">From: <span class="card-subtitle mb-2 text-danger" th:text="*{from}">From</span></p>
-                <p class="text-danger fs-4">To:  <span class="card-subtitle mb-2 text-danger" th:text="*{to}">To</span></p>
+                <p class="text-danger fs-4"><span th:text="#{from}"> From</span>: <span class="card-subtitle mb-2 text-danger" th:text="*{from}">From</span></p>
+                <p class="text-danger fs-4"><span th:text="#{to}">To</span>:  <span class="card-subtitle mb-2 text-danger" th:text="*{to}">To</span></p>
             </div>
-            <p class="text-danger fs-4">Message: </p>
+            <p class="text-danger fs-4"><span th:text="#{message}"> message</span>: </p>
             <span class="card-subtitle mb-2 text-danger fs-5" th:text="*{description}">Description</span>
 
                 <form th:action="@{/user/{uId}/messages/{id}/delete(uId=${userId},id=*{id})}" th:method="delete" >
-                    <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-3 pt-2 pb-2" th:value="Delete">
+                    <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-3 pt-2 pb-2" th:value="#{delete}">
                 </form>
 
             </div>

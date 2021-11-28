@@ -21,31 +21,31 @@
                                 <div class="text-center">
                                     <img src="https://t3.ftcdn.net/jpg/01/12/61/38/360_F_112613854_pw8ZkYdUo0zD4za7Fk1IcoXknuFNhdGM.jpg"
                                          style="width: 185px;" alt="logo">
-                                    <h4 class="mt-1 mb-5 pb-1 text-danger">Find the missing piece of your family</h4>
+                                    <h4 class="mt-1 mb-5 pb-1 text-danger" th:text="#{logoText}">Find the missing piece of your family</h4>
                                 </div>
 
                                 <form method="POST" th:action="@{/search}" th:object="${searchBinding}">
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" >Animal Type</label>
+                                        <label class="form-label text-danger" th:text="#{animalType}">Animal Type</label>
                                         <select  class="form-control" th:errorclass="is-invalid" name="animalType">
-                                            <option value="">- Select animal type -</option>
+                                            <option value="" th:text="#{selectAnimalType}">- Select animal type -</option>
                                             <option th:each="a:${T(com.example.demo.models.enums.AnimalTypes).values()}" th:text="${a}" th:value="${a}" th:selected="${a}==*{animalType}"> Town
                                             </option>
                                         </select>
-                                        <p class="invalid-feedback errors alert alert-danger">
+                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidType}">
                                             Select type
                                         </p>
 
                                     </div>
 
                                     <div class="form-outline mb-4">
-                                        <label class="form-label text-danger" >Town</label>
+                                        <label class="form-label text-danger" th:text="#{town}">Town</label>
                                         <select  class="form-control" name="town" th:errorclass="is-invalid">
-                                            <option value="">- Select town -</option>
+                                            <option value="" th:text="#{selectTown}">- Select town -</option>
                                             <option th:each="t:${towns}" th:text="${t}" th:value="${t}" th:selected="${t}==*{town}"> Town
                                             </option>
                                         </select>
-                                        <p class="invalid-feedback errors alert alert-danger">
+                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidTown}">
                                             Select town
                                         </p>
                                     </div>
@@ -53,7 +53,7 @@
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <input type="submit"
                                                class="btn btn-danger fs-1 btn-block fa-lg gradient-custom-2 pb-2 pt-2 mt-5"
-                                               value="Search">
+                                               th:value="#{search}">
                                     </div>
 
 

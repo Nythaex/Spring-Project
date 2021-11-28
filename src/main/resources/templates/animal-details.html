@@ -17,15 +17,15 @@
             <img th:src="@{*{image}}" alt="There is not a picture"
                  class="">
             <div >
-                <h1  class="" th:text="*{name}">Card title</h1>
-                <h1  class="" th:text="*{animalType}">Card title</h1>
+                <h1  th:text="*{name}">Name</h1>
+                <h5   th:text="*{animalType}">Animal type</h5>
                 <h5  th:text="*{description}">Description</h5>
             </div>
-            <a sec:authorize="hasAnyRole('USER')" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-3 pt-2 pb-2" th:href="@{/shelter/{uId}(uId=${userId})}">Go to the shelter</a>
+            <a sec:authorize="hasAnyRole('USER')" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-3 pt-2 pb-2" th:text="#{goToShelter}" th:href="@{/shelter/{uId}(uId=${userId})}">Go to the shelter</a>
             <div th:if="${mine}" class="d-flex justify-content-around ">
-                <a class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2  mt-3 pt-2 " th:href="@{/animal/{id}/update(id=*{id})}">Update</a>
+                <a class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2  mt-3 pt-2 " th:text="#{update}" th:href="@{/animal/{id}/update(id=*{id})}">Update</a>
                 <form th:action="@{/animal/{id}/delete(id=*{id})}" th:method="delete" >
-                    <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-3 pt-2 pb-2" th:value="Delete">
+                    <input type="submit" class="btn btn-danger fs-2 btn-block fa-lg gradient-custom-2 mb-1 mt-3 pt-2 pb-2"  th:value="#{delete}">
                 </form>
             </div>
 

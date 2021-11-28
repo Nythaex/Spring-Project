@@ -23,24 +23,24 @@
         </button>
         <div class="collapse navbar-collapse fs-3" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 container-fluid justify-content-around">
-                <div class="fs-2 text-danger" sec:authorize="isAuthenticated()"> Welcome, <span sec:authentication="name">name</span></div>
+                <div class="fs-2 text-danger" sec:authorize="isAuthenticated()"> <span th:text="#{welcome}">Welcome</span> <span sec:authentication="name">name</span></div>
                 <li class="nav-item">
-                    <a class="nav-link text-danger  fs-3" sec:authorize="hasRole('ADMIN')" th:href="@{/admin}">Admin</a>
+                    <a class="nav-link text-danger  fs-3" sec:authorize="hasRole('ADMIN')" th:text="#{admin}" th:href="@{/admin}">Admin</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-danger  fs-3" sec:authorize="isAuthenticated()" th:href="@{/user/messages}">My Messages</a>
+                    <a class="nav-link text-danger  fs-3" sec:authorize="isAuthenticated()" th:text="#{myMessages}" th:href="@{/user/messages}">My Messages</a>
 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-danger fs-3" sec:authorize="isAnonymous()" th:href="@{/register}">Register</a>
+                    <a class="nav-link text-danger fs-3" sec:authorize="isAnonymous()" th:text="#{register}" th:href="@{/register}">Register</a>
                 </li>
                 <li class="nav-item" sec:authorize="isAnonymous()">
-                    <a class="nav-link text-danger fs-3"  th:href="@{/login}">Login</a>
+                    <a class="nav-link text-danger fs-3" th:text="#{login}"  th:href="@{/login}">Login</a>
                 </li>
                 <li class="nav-item" sec:authorize="isAuthenticated()">
                     <div class="form-inline">
-                        <form th:action="@{/logout}" th:method="post" >
-                            <input  class="nav-link text-danger border-0 bg-white fs-3" type="submit" th:value="'Logout'">
+                        <form th:action="@{/logout}"  th:method="post" >
+                            <input  class="nav-link text-danger border-0 bg-white fs-3"  type="submit" th:value="#{logout}">
                         </form>
 
                     </div>
@@ -57,11 +57,25 @@
             <span class="text-danger">© 2021 Rescue</span>
         </div>
 
+
         <div class="nav-link">
-            <a class="text-danger nav-link" href="/about">About us</a>
+            <a class="text-danger nav-link" href="/about" th:text="#{about}">"About"</a>
         </div>
 
+
+
+
         <ul class="nav col-md-4 justify-content-around list-unstyled d-flex">
+            <form th:method="get">
+                <select
+                        onchange="this.form.submit()"
+                        id="lang"
+                        name="lang" class="text-danger">
+
+                    <option value="en_US" th:selected="${#locale.toString()} == 'en_US'">English</option>
+                    <option value="bg_BG" th:selected="${#locale.toString()} == 'bg_BG'">Български</option>
+                </select>
+            </form>
             <li class="ms-3"><a class="text-muted" href="https://twitter.com/AmsterDogRescue"><i class="fab fa-twitter text-danger" aria-hidden="true"></i></a></li>
 
             <li class="ms-3"><a class="text-muted" href="https://www.instagram.com/a_little_shelter/?hl=bg"><i class="fab fa-instagram text-danger" aria-hidden="true"></i></a></li>
