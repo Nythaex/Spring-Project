@@ -105,17 +105,22 @@ public class ShelterController {
     }
 
 
+
     @GetMapping("/shelter/update")
     public String getUpdateShelter (Model model,@AuthenticationPrincipal CurrentUser currentUser){
+
         User userById = userService.getById(currentUser.getId());
+        model.addAttribute("addShelterBinding",new AddShelterBinding().setName(userById.getShelter().getName()).setDescription(userById.getShelter().getDescription()));
         if (userById.getShelter().getName()==null){
             return "redirect:/user/add-shelter";
         }
         if (!model.containsAttribute("incorrectImage")){
             model.addAttribute("incorrectImage",false);
         }
+        if (!model.containsAttribute("incorrectName")){
+            model.addAttribute("incorrectName",false);
+        }
 
-       model.addAttribute("addShelterBinding",new AddShelterBinding().setName(userById.getShelter().getName()).setDescription(userById.getShelter().getDescription()));
         return "update-shelter";
     }
 
@@ -129,8 +134,10 @@ public class ShelterController {
             if (addShelterBinding.getImage().getOriginalFilename().equals("")){
                 redirectAttributes.addFlashAttribute("incorrectImage",true);
             }
-            redirectAttributes.addFlashAttribute("addShelterBinding", addShelterBinding);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addShelterBinding", bindingResult);
+            if (addShelterBinding.getName().length()<1||addShelterBinding.getName().length()>20){
+                redirectAttributes.addFlashAttribute("incorrectName",true);
+            }
+
             return "redirect:/shelter/update";
         }
 

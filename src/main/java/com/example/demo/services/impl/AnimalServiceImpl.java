@@ -69,14 +69,14 @@ public class AnimalServiceImpl implements AnimalService {
 
     @Override
     public List<AnimalView> getAllSearched(SearchBinding searchBinding) {
-       return animalRepository.findAll().stream().filter(a->a.getAnimalType()==searchBinding.getAnimalType()&&a.getShelter().getUser().getTown().getName().equals(searchBinding.getTown())).map(a->getAnimalView(a.getId()).setUserId(a.getShelter().getUser().getId())).toList();
+       return animalRepository.findAll().stream().filter(a->a.getAnimalType()==searchBinding.getAnimalType()&&a.getShelter().getUser().getTown().getName().equals(searchBinding.getTown())&& !a.getShelter().getUser().getBanned()).map(a->getAnimalView(a.getId()).setUserId(a.getShelter().getUser().getId())).toList();
 
     }
 
     @Override
     public AnimalView getAnimalView(Long id) {
         Animal animal = animalRepository.findById(id).orElse(null);
-        if (animal==null){
+        if (animal==null||animal.getShelter().getUser().getBanned()){
             return null;
         }
 

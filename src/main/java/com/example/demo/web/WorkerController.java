@@ -124,6 +124,12 @@ public class WorkerController {
         if (!model.containsAttribute("incorrectImage")) {
             model.addAttribute("incorrectImage", false);
         }
+        if (!model.containsAttribute("incorrectFirstName")) {
+            model.addAttribute("incorrectFirstName", false);
+        }
+        if (!model.containsAttribute("incorrectLastName")) {
+            model.addAttribute("incorrectLastName", false);
+        }
         model.addAttribute("id", id);
 
 
@@ -140,8 +146,12 @@ public class WorkerController {
             if (Objects.equals(addWorkerBinding.getImage().getOriginalFilename(), "")) {
                 redirectAttributes.addFlashAttribute("incorrectImage", true);
             }
-            redirectAttributes.addFlashAttribute("addWorkerBinding", addWorkerBinding);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addWorkerBinding", bindingResult);
+            if (addWorkerBinding.getFirstName().length()<1||addWorkerBinding.getFirstName().length()>10){
+                redirectAttributes.addFlashAttribute("incorrectFirstName",true);
+            }
+            if (addWorkerBinding.getLastName().length()<1||addWorkerBinding.getLastName().length()>10){
+                redirectAttributes.addFlashAttribute("incorrectLastName",true);
+            }
             return "redirect:/worker/{id}/update";
         }
 

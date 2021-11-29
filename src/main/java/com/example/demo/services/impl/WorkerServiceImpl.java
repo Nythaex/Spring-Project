@@ -57,7 +57,7 @@ public class WorkerServiceImpl implements WorkerService {
     @Override
     public WorkerView getWorkerView(Long id) {
         Worker worker = workerRepository.findById(id).orElse(null);
-        if (worker==null){
+        if (worker==null||worker.getShelter().getUser().getBanned()){
             return null;
         }
         return  modelMapper.map(worker, WorkerView.class).setFullName(worker.getFirstName() + " " + worker.getLastName()).setImage(worker.getImage().getUrl());

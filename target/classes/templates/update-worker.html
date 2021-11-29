@@ -28,23 +28,23 @@
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label text-danger" for="form2Example11" th:text="#{firstName}">First name</label>
-                                        <input type="text" id="form2Example11" th:errorclass="is-invalid"
+                                        <input type="text" id="form2Example11"
                                                th:field="*{firstName}" class="form-control text-danger">
-                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidName}">
+                                        <p  th:if="${incorrectFirstName}" class=" errors alert alert-danger" th:text="#{invalidWorkerName}">
                                             Invalid name (min=1,max=10)
                                         </p>
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label text-danger" for="form2Example11" th:text="#{lastName}">Last name</label>
-                                        <input type="text" id="form2Example12" th:errorclass="is-invalid"
+                                        <input type="text" id="form2Example12"
                                                th:field="*{lastName}" class="form-control text-danger">
-                                        <p class="invalid-feedback errors alert alert-danger" th:text="#{invalidName}">
+                                        <p th:if="${incorrectLastName}" class=" errors alert alert-danger" th:text="#{invalidWorkerName}">
                                             Invalid name (min=1,max=10)
                                         </p>
                                     </div>
                                     <div class="form-outline mb-4">
                                         <label class="form-label text-danger" th:text="#{image}">Image</label>
-                                        <input type="file" th:field="*{image}" name="imageUrl" th:errorclass="is-invalid"
+                                        <input type="file" th:field="*{image}" name="imageUrl"
                                                class="form-control text-danger">
                                         <p th:if="${incorrectImage}" class="errors alert alert-danger" th:text="#{invalidImage}">
                                             Invalid image
@@ -54,7 +54,7 @@
 
                                     <div class="form-outline mb-4">
                                         <label class="form-label text-danger" for="form2Example22" th:text="#{description}">Description</label>
-                                        <textarea th:field="*{description}" th:errorclass="is-invalid"
+                                        <textarea th:field="*{description}"
                                                   id="form2Example22" class="form-control text-danger"></textarea>
                                     </div>
 

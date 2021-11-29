@@ -133,6 +133,13 @@ public class AnimalController {
         if (!model.containsAttribute("incorrectImage")) {
             model.addAttribute("incorrectImage", false);
         }
+        if (!model.containsAttribute("incorrectName")) {
+            model.addAttribute("incorrectName", false);
+        }
+        if (!model.containsAttribute("incorrectType")) {
+            model.addAttribute("incorrectType", false);
+        }
+
         model.addAttribute("id", id);
 
 
@@ -142,14 +149,18 @@ public class AnimalController {
     @PatchMapping("/animal/{id}/update")
     public String updateAnimal(@Valid AddAnimalBinding addAnimalBinding, BindingResult bindingResult, RedirectAttributes redirectAttributes, @PathVariable Long id) throws IOException {
 
-        cloudinaryService.delete(animalService.getById(id).getImage().getPublicId());
+          cloudinaryService.delete(animalService.getById(id).getImage().getPublicId());
 
         if (bindingResult.hasErrors() || addAnimalBinding.getImage().getOriginalFilename().equals("")) {
             if (addAnimalBinding.getImage().getOriginalFilename().equals("")) {
                 redirectAttributes.addFlashAttribute("incorrectImage", true);
             }
-            redirectAttributes.addFlashAttribute("addAnimalBinding", addAnimalBinding);
-            redirectAttributes.addFlashAttribute("org.springframework.validation.BindingResult.addAnimalBinding", bindingResult);
+            if (addAnimalBinding.getName().length()<1|addAnimalBinding.getName().length()>20){
+                redirectAttributes.addFlashAttribute("incorrectName",true);
+            }
+            if (addAnimalBinding.getAnimalType()==null){
+                redirectAttributes.addFlashAttribute("incorrectType",true);
+            }
             return "redirect:/animal/" + id + "/update";
         }
 
