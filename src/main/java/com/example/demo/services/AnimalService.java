@@ -11,6 +11,8 @@ import java.util.List;
 public interface AnimalService {
 
 
+    void deleteBanned();
+
     Animal getById(Long id);
 
     void save(Animal animal);

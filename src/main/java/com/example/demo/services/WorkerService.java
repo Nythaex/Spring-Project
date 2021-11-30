@@ -5,6 +5,8 @@ import com.example.demo.models.services.AddWorkerService;
 import com.example.demo.models.view.WorkerView;
 
 public interface WorkerService {
+    void deleteBanned();
+
     void save(Worker worker);
 
     void deleteById(Long id);

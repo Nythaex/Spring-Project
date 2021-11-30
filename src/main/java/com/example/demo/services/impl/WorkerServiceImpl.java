@@ -24,6 +24,11 @@ public class WorkerServiceImpl implements WorkerService {
     }
 
     @Override
+    public void deleteBanned(){
+        workerRepository.findAll().stream().filter(worker -> worker.getShelter().getUser().getBanned()).forEach(workerRepository::delete);
+    }
+
+    @Override
     public void save(Worker worker) {
         workerRepository.save(worker);
     }

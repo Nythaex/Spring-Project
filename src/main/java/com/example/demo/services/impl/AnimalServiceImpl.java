@@ -26,6 +26,10 @@ public class AnimalServiceImpl implements AnimalService {
         this.imageService = imageService;
     }
 
+    @Override
+     public void deleteBanned(){
+        animalRepository.findAll().stream().filter(animal -> animal.getShelter().getUser().getBanned()).forEach(animalRepository::delete);
+     }
 
     @Override
     public Animal getById(Long id){
