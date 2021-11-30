@@ -6,11 +6,11 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SchedulingConf {
+public class SchedulingConfig {
     private WorkerService workerService;
     private AnimalService animalService;
 
-    public SchedulingConf(WorkerService workerService, AnimalService animalService) {
+    public SchedulingConfig(WorkerService workerService, AnimalService animalService) {
         this.workerService = workerService;
         this.animalService = animalService;
     }
