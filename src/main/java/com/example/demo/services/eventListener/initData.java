@@ -1,9 +1,8 @@
-package com.example.demo.services.impl;
+package com.example.demo.services.eventListener;
 
 import com.example.demo.models.entities.Region;
 import com.example.demo.models.entities.Town;
 import com.example.demo.models.entities.User;
-import com.example.demo.models.entities.UserRole;
 import com.example.demo.models.enums.Role;
 import com.example.demo.models.enums.UserType;
 import com.example.demo.models.services.RegisterService;
@@ -11,20 +10,20 @@ import com.example.demo.services.RegionService;
 import com.example.demo.services.TownService;
 import com.example.demo.services.UserRoleService;
 import com.example.demo.services.UserService;
+import com.example.demo.utils.event.InitEvent;
+import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
-import java.util.HashSet;
-
-@Service
-public class InitServiceImpl  {
+@Component
+public class initData {
     private final TownService townService;
     private final RegionService regionService;
     private final UserRoleService userRoleService;
     private final UserService userService;
     private final PasswordEncoder encoder;
 
-    public InitServiceImpl(TownService townService, RegionService regionService, UserRoleService userRoleService, UserService userService, PasswordEncoder encoder) {
+    public initData(TownService townService, RegionService regionService, UserRoleService userRoleService, UserService userService, PasswordEncoder encoder) {
         this.townService = townService;
         this.regionService = regionService;
         this.userRoleService = userRoleService;
@@ -32,7 +31,9 @@ public class InitServiceImpl  {
         this.encoder = encoder;
     }
 
-    public void init() {
+
+    @EventListener(InitEvent.class)
+    public void onAppStart(){
         if (townService.isEmpty()) {
 
             regionService.addRegion(new Region().setName("Blagoevgrad"));
@@ -213,10 +214,9 @@ public class InitServiceImpl  {
             userService.save(byId);
             userService.register(new RegisterService().setTown("Yambol").setPassword("12345").setUsername("user").setEmail("user@gmail.com").setUserType(UserType.USER));
             userService.register(new RegisterService().setTown("Yambol").setPassword("12345").setUsername("banned").setEmail("banned@gmail.com").setUserType(UserType.SHELTER));
-           userService.save(userService.getById(3L).setBanned(true));
+            userService.save(userService.getById(3L).setBanned(true));
             userService.register(new RegisterService().setTown("Yambol").setPassword("12345").setUsername("shelter").setEmail("shelter@gmail.com").setUserType(UserType.SHELTER));
 
         }
-
     }
 }
