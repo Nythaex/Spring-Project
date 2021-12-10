@@ -9,6 +9,7 @@ import com.example.demo.repositories.AnimalRepository;
 import com.example.demo.services.AnimalService;
 import com.example.demo.services.ImageService;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -20,11 +21,13 @@ public class AnimalServiceImpl implements AnimalService {
     private final ModelMapper modelMapper;
     private final ImageService imageService;
 
+
     public AnimalServiceImpl(AnimalRepository animalRepository, ModelMapper modelMapper, ImageService imageService) {
         this.animalRepository = animalRepository;
         this.modelMapper = modelMapper;
         this.imageService = imageService;
     }
+
 
     @Override
      public void deleteBanned(){
