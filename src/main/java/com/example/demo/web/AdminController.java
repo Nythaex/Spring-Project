@@ -37,13 +37,13 @@ public class AdminController {
         return "admin";
     }
 
-    @PatchMapping("admin/{id}/ban")
+    @PatchMapping("/admin/{id}/ban")
     public String banUser(@PathVariable Long id){
         userService.banUser(id);
 
         return "redirect:/admin";
     }
-    @PatchMapping("admin/{id}/unban")
+    @PatchMapping("/admin/{id}/unban")
     public String unbanUser(@PathVariable Long id){
         userService.unbanUser(id);
 

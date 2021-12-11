@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a657240a-0f9e-4d2b-972f-e8c34563efdc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/AdminControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/HomeControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/RegisterAndLoginControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/Runner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/ApplicationConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/ApplicationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/GlobalErrorHandling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/GlobalErrorHandling.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/SchedulingConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/SchedulingConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/conf/WebConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/AddAnimalBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/AddAnimalBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/AddShelterBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/AddShelterBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/AddWorkerBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/AddWorkerBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/LoginBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/LoginBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/RegisterBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/RegisterBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/SearchBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/SearchBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/SendMessageBinding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/bindings/SendMessageBinding.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/BasicEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/BasicEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Image.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Image.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Region.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Region.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Shelter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Shelter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Town.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Town.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/UserRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/UserRole.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Worker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/Worker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/enums/AnimalTypes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/enums/AnimalTypes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/enums/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/enums/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/enums/UserType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/enums/UserType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/AddAnimalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/AddAnimalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/AddShelterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/AddShelterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/AddWorkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/AddWorkerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/RegisterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/RegisterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/SentMessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/services/SentMessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/AnimalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/AnimalView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/MessagesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/MessagesView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/ShelterView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/ShelterView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/StatsView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/StatsView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/UserView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/UserView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/WorkerView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/view/WorkerView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/AnimalRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/AnimalRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/ImageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/ImageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/MessageRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/MessageRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/RegionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/RegionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/ShelterRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/ShelterRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/TownRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/TownRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/UserRoleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/UserRoleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/WorkerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/repositories/WorkerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/AnimalService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/AnimalService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/CloudinaryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/CloudinaryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/ImageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/ImageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/MessageService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/MessageService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/RegionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/RegionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/ShelterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/ShelterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/StatService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/StatService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/TownService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/TownService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/UserRoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/UserRoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/WorkerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/WorkerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/eventListener/initData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/eventListener/initData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/AnimalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/AnimalServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/CloudinaryImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/CloudinaryImage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/CloudinaryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/CloudinaryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/CurrentUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/CurrentUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/CurrentUserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/ImageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/ImageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/RegionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/RegionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/ShelterServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/ShelterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/StatServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/StatServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/TownServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/TownServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/UserRoleServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/UserRoleServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/WorkerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/WorkerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/aop/TrackTimeAOP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/aop/TrackTimeAOP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/event/InitEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/event/InitEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/exeptions/ObjectNotFoundExeption.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/exeptions/ObjectNotFoundExeption.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/validations/user/UniqueEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/validations/user/UniqueEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/validations/user/UniqueUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/validations/user/UniqueUsername.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/validations/user/UniqueValidatorEmail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/validations/user/UniqueValidatorEmail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/validations/user/UniqueValidatorUsername.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/validations/user/UniqueValidatorUsername.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/AnimalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/AnimalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/MessageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/MessageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/RegisterAndLoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/RegisterAndLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/SearchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/SearchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/ShelterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/ShelterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/WorkerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/WorkerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/web/inteceptors/LoginInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/web/inteceptors/LoginInterceptor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/text_bg.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/text_bg.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n/text_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n/text_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-animal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-animal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-shelter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-shelter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/add-worker.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/add-worker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/animal-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/animal-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/400.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/400.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/405.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/405.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/fragment/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/fragment/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/messages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/send-message.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/send-message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/shelter-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/shelter-home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update-animal.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/update-animal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update-shelter.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/update-shelter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/update-worker.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/update-worker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/worker-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/worker-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/AnimalServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/service/AnimalServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/additional-spring-configuration-metadata.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/additional-spring-configuration-metadata.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/AdminController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/web/AdminController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/i18n/text_bg.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/text_bg.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/i18n/text_en.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/i18n/text_en.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-animal.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-animal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-shelter.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-shelter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/add-worker.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/add-worker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/admin.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/admin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/animal-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/animal-details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/400.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/400.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/403.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/403.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/405.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/405.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/error/500.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/error/500.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/fragment/fragments.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/fragment/fragments.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/messages.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/messages.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/result.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/result.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/send-message.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/send-message.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/shelter-home.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/shelter-home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/update-animal.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/update-animal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/update-shelter.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/update-shelter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/update-worker.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/update-worker.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/worker-details.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/worker-details.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageOptionsProvider">
+    <option name="myAddOrReplace" value="1" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="JPA Palette" value="true" />
+        <entry key="JPA Structure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="JPA Palette" value="false" />
+        <entry key="JPA Structure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectId" id="226zJ9j7rEGgDx5rHkVre6D2CjD" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="ignore.preview.features.used" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.demo.web" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.AdminControllerTest">
+    <configuration name="AdminControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.web" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.AdminControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminControllerTest.test_Ban" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.web" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.AdminControllerTest" />
+      <option name="METHOD_NAME" value="test_Ban" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminControllerTest.test_GetAdmin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.web" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.AdminControllerTest" />
+      <option name="METHOD_NAME" value="test_GetAdmin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AdminControllerTest.test_GetLoginForm_OpensLoginForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.web" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.AdminControllerTest" />
+      <option name="METHOD_NAME" value="test_GetLoginForm_OpensLoginForm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterAndLoginControllerTest.test_GetRegisterForm_OpensRegisterForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.example.demo.web" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.RegisterAndLoginControllerTest" />
+      <option name="METHOD_NAME" value="test_GetRegisterForm_OpensRegisterForm" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="demo" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DemoApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.AdminControllerTest" />
+        <item itemvalue="JUnit.AdminControllerTest.test_Ban" />
+        <item itemvalue="JUnit.AdminControllerTest.test_GetAdmin" />
+        <item itemvalue="JUnit.AdminControllerTest.test_GetLoginForm_OpensLoginForm" />
+        <item itemvalue="JUnit.RegisterAndLoginControllerTest.test_GetRegisterForm_OpensRegisterForm" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a657240a-0f9e-4d2b-972f-e8c34563efdc" name="Changes" comment="" />
+      <created>1639172753998</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1639172753998</updated>
+      <workItem from="1639172756368" duration="190000" />
+      <workItem from="1639174420826" duration="5421000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest.ic" NAME="RegisterAndLoginControllerTest Coverage Results" MODIFIED="1639225737939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$AdminControllerTest_test_GetLoginForm_OpensLoginForm.ic" NAME="AdminControllerTest.test_GetLoginForm_OpensLoginForm Coverage Results" MODIFIED="1639225996578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest_test_PostRegister_CreatesNewUserFailed.ic" NAME="RegisterAndLoginControllerTest.test_PostRegister_CreatesNewUserFailed Coverage Results" MODIFIED="1639225657213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$All_in_demo.ic" NAME="All in demo Coverage Results" MODIFIED="1639223670869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/SpringProject$AdminControllerTest_test_Ban.ic" NAME="AdminControllerTest.test_Ban Coverage Results" MODIFIED="1639227001316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest_test_PostRegister_CreatesNewUser.ic" NAME="RegisterAndLoginControllerTest.test_PostRegister_CreatesNewUser Coverage Results" MODIFIED="1639225640970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest_test_GetRegisterForm_OpensRegisterForm.ic" NAME="RegisterAndLoginControllerTest.test_GetRegisterForm_OpensRegisterForm Coverage Results" MODIFIED="1639225763068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+  </component>
+</project>
