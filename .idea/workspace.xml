@@ -26,12 +26,14 @@
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
       <map>
+        <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="true" />
         <entry key="JPA Structure" value="true" />
       </map>
     </option>
     <option name="myId2Visible">
       <map>
+        <entry key="JPA Inspector" value="true" />
         <entry key="JPA Palette" value="false" />
         <entry key="JPA Structure" value="false" />
       </map>
@@ -177,7 +179,7 @@
       <option name="presentableId" value="Default" />
       <updated>1639172753998</updated>
       <workItem from="1639172756368" duration="190000" />
-      <workItem from="1639174420826" duration="6012000" />
+      <workItem from="1639174420826" duration="6684000" />
     </task>
     <servers />
   </component>
