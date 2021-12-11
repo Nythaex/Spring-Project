@@ -1,10 +1,11 @@
 package com.example.demo.repositories;
 
 import com.example.demo.models.entities.Region;
-import jdk.jfr.Registered;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-@Registered
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
 public interface RegionRepository extends JpaRepository<Region,Long> {
     Region findByName(String name);
 }
