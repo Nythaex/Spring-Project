@@ -23,10 +23,10 @@ public class User extends BasicEntity{
     @Column(unique = true,nullable = false)
     private String email;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "from")
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "from",cascade = CascadeType.REMOVE)
     private Set<Message> mine;
 
-    @OneToMany(fetch = FetchType.EAGER,mappedBy = "to")
+    @OneToMany(fetch = FetchType.EAGER,mappedBy = "to",cascade = CascadeType.REMOVE)
     private Set<Message> theirs;
 
     @ManyToOne(fetch = FetchType.EAGER)

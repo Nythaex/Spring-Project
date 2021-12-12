@@ -6,6 +6,7 @@ import com.example.demo.repositories.MessageRepository;
 import com.example.demo.services.MessageService;
 import com.example.demo.services.UserService;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -14,11 +15,13 @@ public class MessageServiceImpl implements MessageService {
     private final ModelMapper modelMapper;
     private final UserService userService;
 
+    @Autowired
     public MessageServiceImpl(MessageRepository messageRepository, ModelMapper modelMapper, UserService userService) {
         this.messageRepository = messageRepository;
         this.modelMapper = modelMapper;
         this.userService = userService;
     }
+
 
 
     @Override

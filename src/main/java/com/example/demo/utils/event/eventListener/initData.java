@@ -1,4 +1,4 @@
-package com.example.demo.services.eventListener;
+package com.example.demo.utils.event.eventListener;
 
 import com.example.demo.models.entities.Region;
 import com.example.demo.models.entities.Town;

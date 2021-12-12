@@ -5,8 +5,103 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a657240a-0f9e-4d2b-972f-e8c34563efdc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/AnimalServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/AnimalServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/services/impl/CloudinaryImageTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/services/impl/CurrentUserServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/services/impl/MessageServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/services/impl/RegionServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/services/impl/TownServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/services/impl/UserRoleServiceImplTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/utils/event/eventListener/initDataTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/AnimalControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/MessageControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/SearchControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/ShelterControllerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/WorkerControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat.values" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat.values" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat.values.at" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat.values.s" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat.values.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat_i" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/4d277131-fa84-445d-9981-ef323bfaf3cc/entities/entities.dat_i" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/models/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/eventListener/initData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/utils/event/eventListener/initData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/ImageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/ImageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/MessageServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/MessageServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/TownServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/services/impl/TownServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/service/AnimalServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/services/impl/AnimalServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/web/HomeControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/HomeControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/demo/web/RegisterAndLoginControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/demo/web/RegisterAndLoginControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/system.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/DemoApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/DemoApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/Runner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/Runner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/conf/ApplicationConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/conf/ApplicationConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/conf/CloudinaryConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/conf/CloudinaryConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/conf/GlobalErrorHandling.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/conf/GlobalErrorHandling.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/conf/SchedulingConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/conf/SchedulingConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/conf/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/conf/SecurityConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/conf/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/conf/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/AddAnimalBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/AddAnimalBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/AddShelterBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/AddShelterBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/AddWorkerBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/AddWorkerBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/LoginBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/LoginBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/RegisterBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/RegisterBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/SearchBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/SearchBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/SendMessageBinding.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/bindings/SendMessageBinding.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Animal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Animal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/BasicEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/BasicEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Image.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Image.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Message.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Region.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Region.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Shelter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Shelter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Town.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Town.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/UserRole.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/UserRole.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Worker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/entities/Worker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/enums/AnimalTypes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/enums/AnimalTypes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/enums/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/enums/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/enums/UserType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/enums/UserType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/AddAnimalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/AddAnimalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/AddShelterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/AddShelterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/AddWorkerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/AddWorkerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/RegisterService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/RegisterService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/SentMessageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/services/SentMessageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/AnimalView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/AnimalView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/MessagesView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/MessagesView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/ShelterView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/ShelterView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/StatsView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/StatsView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/UserView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/UserView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/WorkerView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/models/view/WorkerView.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/AnimalRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/AnimalRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/ImageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/ImageRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/MessageRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/MessageRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/RegionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/RegionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/ShelterRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/ShelterRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/TownRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/TownRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/UserRoleRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/UserRoleRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/WorkerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/repositories/WorkerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/AnimalService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/AnimalService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/CloudinaryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/CloudinaryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/ImageService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/ImageService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/RegionService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/RegionService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/StatService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/StatService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/TownService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/TownService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/UserRoleService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/UserRoleService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/WorkerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/WorkerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/eventListener/initData.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/services/impl/CloudinaryImage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/services/impl/CloudinaryImage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/utils/exeptions/ObjectNotFoundExeption.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/utils/exeptions/ObjectNotFoundExeption.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/demo/web/inteceptors/LoginInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/demo/web/inteceptors/LoginInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/service/AnimalServiceImplTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/web/HomeControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/web/HomeControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/demo/web/RegisterAndLoginControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/example/demo/web/RegisterAndLoginControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +138,9 @@
     </option>
   </component>
   <component name="ProjectId" id="226zJ9j7rEGgDx5rHkVre6D2CjD" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -54,6 +152,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
@@ -72,85 +171,82 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.example.demo.services.impl" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.example.demo.services.impl" />
+      <recent name="com.example.demo.services.eventListener" />
       <recent name="com.example.demo.web" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.DemoApplication">
-    <configuration name="AdminControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.All in demo">
+    <configuration name="All in demo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CloudinaryImageTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="PATTERN" value="com.example.demo.services.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.web" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.AdminControllerTest" />
+      <option name="PACKAGE_NAME" value="com.example.demo.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.services.impl.CloudinaryImageTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminControllerTest.test_Ban" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CloudinaryImageTest.testUrl" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="PATTERN" value="com.example.demo.services.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.web" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.AdminControllerTest" />
-      <option name="METHOD_NAME" value="test_Ban" />
+      <option name="PACKAGE_NAME" value="com.example.demo.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.services.impl.CloudinaryImageTest" />
+      <option name="METHOD_NAME" value="testUrl" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminControllerTest.test_GetAdmin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ImageServiceImplTest.testDeleteImage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="PATTERN" value="com.example.demo.services.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.web" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.AdminControllerTest" />
-      <option name="METHOD_NAME" value="test_GetAdmin" />
+      <option name="PACKAGE_NAME" value="com.example.demo.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.services.impl.ImageServiceImplTest" />
+      <option name="METHOD_NAME" value="testDeleteImage" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="AdminControllerTest.test_GetLoginForm_OpensLoginForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="RegionServiceImplTest.test_getRegion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.example.demo.web.*" />
+          <option name="PATTERN" value="com.example.demo.services.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.web" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.AdminControllerTest" />
-      <option name="METHOD_NAME" value="test_GetLoginForm_OpensLoginForm" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="RegisterAndLoginControllerTest.test_GetRegisterForm_OpensRegisterForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="demo" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.web.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.demo.web" />
-      <option name="MAIN_CLASS_NAME" value="com.example.demo.web.RegisterAndLoginControllerTest" />
-      <option name="METHOD_NAME" value="test_GetRegisterForm_OpensRegisterForm" />
+      <option name="PACKAGE_NAME" value="com.example.demo.services.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.example.demo.services.impl.RegionServiceImplTest" />
+      <option name="METHOD_NAME" value="test_getRegion" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -165,11 +261,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.AdminControllerTest" />
-        <item itemvalue="JUnit.AdminControllerTest.test_Ban" />
-        <item itemvalue="JUnit.AdminControllerTest.test_GetAdmin" />
-        <item itemvalue="JUnit.AdminControllerTest.test_GetLoginForm_OpensLoginForm" />
-        <item itemvalue="JUnit.RegisterAndLoginControllerTest.test_GetRegisterForm_OpensRegisterForm" />
+        <item itemvalue="JUnit.All in demo" />
+        <item itemvalue="JUnit.RegionServiceImplTest.test_getRegion" />
+        <item itemvalue="JUnit.ImageServiceImplTest.testDeleteImage" />
+        <item itemvalue="JUnit.CloudinaryImageTest" />
+        <item itemvalue="JUnit.CloudinaryImageTest.testUrl" />
       </list>
     </recent_temporary>
   </component>
@@ -182,7 +278,8 @@
       <option name="presentableId" value="Default" />
       <updated>1639172753998</updated>
       <workItem from="1639172756368" duration="190000" />
-      <workItem from="1639174420826" duration="8244000" />
+      <workItem from="1639174420826" duration="27922000" />
+      <workItem from="1639267457667" duration="3054000" />
     </task>
     <servers />
   </component>
@@ -199,25 +296,47 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest.ic" NAME="RegisterAndLoginControllerTest Coverage Results" MODIFIED="1639225737939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>com.example.demo.web.*</FILTER>
-    </SUITE>
     <SUITE FILE_PATH="coverage/SpringProject$AdminControllerTest_test_GetLoginForm_OpensLoginForm.ic" NAME="AdminControllerTest.test_GetLoginForm_OpensLoginForm Coverage Results" MODIFIED="1639225996578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.demo.web.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest_test_PostRegister_CreatesNewUserFailed.ic" NAME="RegisterAndLoginControllerTest.test_PostRegister_CreatesNewUserFailed Coverage Results" MODIFIED="1639225657213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/SpringProject$SearchControllerTest_test_GetResult.ic" NAME="SearchControllerTest.test_GetResult Coverage Results" MODIFIED="1639254358325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.demo.web.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/SpringProject$All_in_demo.ic" NAME="All in demo Coverage Results" MODIFIED="1639223670869" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/SpringProject$AdminControllerTest_test_Ban.ic" NAME="AdminControllerTest.test_Ban Coverage Results" MODIFIED="1639227001316" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$HomeControllerTest_test_GetAbout.ic" NAME="HomeControllerTest.test_GetAbout Coverage Results" MODIFIED="1639247859954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.demo.web.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest_test_PostRegister_CreatesNewUser.ic" NAME="RegisterAndLoginControllerTest.test_PostRegister_CreatesNewUser Coverage Results" MODIFIED="1639225640970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.demo.web.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest_test_GetRegisterForm_OpensRegisterForm.ic" NAME="RegisterAndLoginControllerTest.test_GetRegisterForm_OpensRegisterForm Coverage Results" MODIFIED="1639225763068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$TownServiceImplTest_test_save.ic" NAME="TownServiceImplTest.test_save Coverage Results" MODIFIED="1639263126646" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.services.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$CurrentUserServiceImplTest_testUserNotFound.ic" NAME="CurrentUserServiceImplTest.testUserNotFound Coverage Results" MODIFIED="1639261887795" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.services.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest.ic" NAME="RegisterAndLoginControllerTest Coverage Results" MODIFIED="1639225737939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$MessageControllerTest_test_GetAdmin.ic" NAME="MessageControllerTest.test_GetAdmin Coverage Results" MODIFIED="1639253164844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$RegisterAndLoginControllerTest_test_PostRegister_CreatesNewUserFailed.ic" NAME="RegisterAndLoginControllerTest.test_PostRegister_CreatesNewUserFailed Coverage Results" MODIFIED="1639225657213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$MessageControllerTest_test_GetSentMessage.ic" NAME="MessageControllerTest.test_GetSentMessage Coverage Results" MODIFIED="1639254023606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.example.demo.web.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/SpringProject$All_in_demo.ic" NAME="All in demo Coverage Results" MODIFIED="1639269674269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/SpringProject$SearchControllerTest_test_GetSentMessage.ic" NAME="SearchControllerTest.test_GetSentMessage Coverage Results" MODIFIED="1639254154390" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.example.demo.web.*</FILTER>
     </SUITE>
   </component>

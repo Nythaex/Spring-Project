@@ -1,10 +1,11 @@
-package com.example.demo.service;
+package com.example.demo.services.impl;
 
 import com.example.demo.models.entities.Animal;
 import com.example.demo.models.enums.AnimalTypes;
 import com.example.demo.repositories.AnimalRepository;
 import com.example.demo.services.impl.AnimalServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -24,6 +25,8 @@ public class AnimalServiceImplTest {
 
 
     }
+
+
 
 
 }

@@ -29,8 +29,13 @@ class RegisterAndLoginControllerTest {
     @Autowired
     private UserRepository userRepository;
 
+    @BeforeEach
+    void init(){
+        userRepository.deleteAll();
+    }
+
     @AfterEach
-    void setUp() {
+    void delete() {
         userRepository.deleteAll();
     }
 
